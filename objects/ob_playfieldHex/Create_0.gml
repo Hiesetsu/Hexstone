@@ -14,12 +14,19 @@ for (i = 0; i<GRID_W; i++)
 	for(j = 0; j<GRID_H; j++)
 	{
 		var yoffset = (i%2)==0 ? 0 : TILE_HEIGHT/2;
+		if(yoffset!=0)
+		{
+			if(j==GRID_H-1)
+			{
+				ds_grid_add(gTiles, i, j, noone);
+				break;
+			}
+		}
 		var tile = instance_create_depth(x+i*TILE_WIDTH*0.75, y+j*TILE_HEIGHT+yoffset, depth-1, ob_tileHex);
 		tile.ex = i;
 		tile.wy = j;
 		tile.image_blend = tile.startColor;
 		ds_grid_add(gTiles, i, j, tile);
-		
 	}
 }
 for (i = 0; i<GRID_W; i++)
@@ -27,8 +34,11 @@ for (i = 0; i<GRID_W; i++)
 	for(j = 0; j<GRID_H; j++)
 	{
 		var t = gTiles[# i, j];
-		var n = collision_circle_list(t.x, t.y, t.sprite_width-10, ob_tileHex, true, true);
-		t.neighbors = n;
+		if(t != noone)
+		{
+			var n = collision_circle_list(t.x, t.y, t.sprite_width-10, ob_tileHex, true, true);
+			t.neighbors = n;
+		}
 	}
 }
 
@@ -48,3 +58,8 @@ t = gTiles[# 4, 1];
 ex_create_model(t, gen_sMarine, PLAYER2)
 t = gTiles[# 3, 0];
 ex_create_model(t, gen_scout, PLAYER2)
+t = gTiles[# 4, 6];
+var _d = instance_create_depth(t.x, t.y, t.depth-1, ob_dummy);
+_d.sprite_index = sp_command_centerP1;
+t = gTiles[# 4, 0];
+instance_create_depth(t.x, t.y, t.depth-1, ob_dummy);

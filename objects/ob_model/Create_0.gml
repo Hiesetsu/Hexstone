@@ -4,10 +4,14 @@
 #macro RANGED 1
 #macro PLAYER1 0
 #macro PLAYER2 1
-#macro PLAYER1_HIGHLIGHT $C1AD45
-#macro PLAYER1_COLOR $FFE2AF
-#macro PLAYER2_HIGHLIGHT $45ADC1
-#macro PLAYER2_COLOR $AFE2FF
+#macro PLAYER1_HIGHLIGHT $F2B213
+//0f4da3
+#macro PLAYER1_COLOR $FCF341
+//41f3fc
+#macro PLAYER2_HIGHLIGHT $2870E5
+//e57028
+#macro PLAYER2_COLOR $78AEE5
+//e5ae78
 #macro REMOVEALARM 3
 name = "Default";
 card_text = "";
@@ -43,6 +47,8 @@ exhausted = false;
 stunned = false;
 disarmed = false;
 rooted = false;
+immobile = false;
+cannot_attack = false;
 
 taunt = false;
 armored = false;
@@ -53,10 +59,12 @@ stealthed = false;
 mortally_wounded = false;
 pending_destroyed = false;
 
-att_displayX = -sprite_width/4-4;
-att_displayY = sprite_height*0.75/2-4;
+att_displayX = -(sprite_width*0.75/2-4);
+att_displayY = sprite_height*0.75/2-5;
 hp_displayX = sprite_width*0.75/2-4;
-hp_displayY = sprite_width*0.75/2-4;
+hp_displayY = sprite_height*0.75/2-5;
+range_displayX = 0;
+range_displayY = (sprite_height/2-3);
 card = noone;
 alarm[0] = 1;
 

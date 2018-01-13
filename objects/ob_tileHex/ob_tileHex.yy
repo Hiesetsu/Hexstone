@@ -106,7 +106,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "$668C62",
+            "value": "$8B7067",
             "varName": "startColor",
             "varType": 7
         },
@@ -162,7 +162,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "$0000FF",
+            "value": "$362CC4",
             "varName": "attackColor",
             "varType": 7
         },
@@ -176,23 +176,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "$B2B2FF",
+            "value": "$9B97FE",
             "varName": "attackColorVacant",
             "varType": 7
-        },
-        {
-            "id": "85c60060-071d-4fd5-a4fc-b9df2c4b8fe2",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "foo",
-            "varType": 0
         }
     ],
     "solid": false,

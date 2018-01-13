@@ -8,7 +8,8 @@
         "201e571d-7820-41ae-aeaf-8b67ea41e8a9",
         "7acc8bd2-969d-466c-92d9-f2196f5b7be9",
         "7c45e1b5-4665-4767-bf6c-37a1fbb3e103",
-        "f3b3c7e0-a68f-4587-93f1-337a24cb74ba"
+        "f3b3c7e0-a68f-4587-93f1-337a24cb74ba",
+        "3eb16a52-753a-4699-9da3-582e13b9404f"
     ],
     "filterType": "GMScript",
     "folderName": "Model Gen Scripts",

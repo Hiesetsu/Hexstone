@@ -4,6 +4,8 @@ if(DEBUG)
 {
 	var line = linebreak;
 	draw_rectangle_color(debug_x-20, debug_y, room_width-20, 680, c_black, c_black, c_black, c_black, false);
+	ex_draw_text_font(debug_x, debug_y+line, "Turn: "+string(turn_number), c_white, fo_belwe_med);
+	line+=linebreak;
 	ex_draw_text_font(debug_x, debug_y+line, "Turn: "+player_to_string[?current_turn], c_white, fo_belwe_med);
 	line+=linebreak;
 	var hoveredTile = hovered_tile == noone ? "None" : string(hovered_tile.ex)+", "+string(hovered_tile.wy);

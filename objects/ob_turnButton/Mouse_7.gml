@@ -10,5 +10,4 @@ if(ob_controller.current_turn == PLAYER1)
 	highlight = PLAYER2_HIGHLIGHT;
 }
 image_blend = color;
-ex_clear_attacktargets();
-ex_clear_pathing();
+ex_clear_nodes();

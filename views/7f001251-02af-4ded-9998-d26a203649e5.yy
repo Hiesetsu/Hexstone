@@ -9,10 +9,11 @@
         "c12df206-9a37-4698-8d18-c7c8bdc9c25b",
         "e8583c23-6ea1-4517-ba60-3718233a3294",
         "a7b4ae64-263f-4422-b4d9-198d904ac237",
-        "d4bfa2e4-3d22-430e-a6bc-6dfccb86e42b"
+        "d4bfa2e4-3d22-430e-a6bc-6dfccb86e42b",
+        "33aa220c-7a0e-4c56-b1df-8fcfd04393be"
     ],
     "filterType": "GMScript",
-    "folderName": "Pathing",
+    "folderName": "Node Flagging",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
