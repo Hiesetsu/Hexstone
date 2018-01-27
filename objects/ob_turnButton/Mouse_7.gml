@@ -3,11 +3,10 @@
 ex_change_turn();
 if(ob_controller.current_turn == PLAYER1)
 {
-	color = PLAYER1_COLOR;
-	highlight = PLAYER1_HIGHLIGHT;
+	path_start(path_player1, 120, path_action_stop, true);
 }else{
-	color = PLAYER2_COLOR;
-	highlight = PLAYER2_HIGHLIGHT;
+	path_start(path_player2, 120, path_action_stop, true);
 }
 image_blend = color;
+image_speed = room_speed/10;
 ex_clear_nodes();

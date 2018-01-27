@@ -8,7 +8,7 @@ if(image_xscale<1)
 	{
 		image_xscale = 1;
 		image_yscale = 1;
-		alarm[0] = room_speed/2;
+		alarm[0] = room_speed*0.75;
 	}
 }
 if(fade)

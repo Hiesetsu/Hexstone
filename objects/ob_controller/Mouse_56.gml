@@ -6,7 +6,8 @@ if(hovered_tile != noone)
 	{
 		if(model && !model.mortally_wounded && !model.pending_destroyed)
 		{
-		if(model.owner != ob_controller.current_turn && attack_node)
+			ex_hide_card(model);
+			if(model.owner != ob_controller.current_turn && attack_node)
 			{
 				if(CONTROL.taunt_in_range)
 				{
@@ -40,7 +41,7 @@ if(hovered_tile != noone)
 		}
 	}
 }
-else
+else if(attacking_occurring || moving_occurring)
 {
 	ex_clear_nodes()
 }

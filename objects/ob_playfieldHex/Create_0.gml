@@ -43,23 +43,24 @@ for (i = 0; i<GRID_W; i++)
 }
 
 var t = gTiles[# 5, 5];
-ex_create_model(t, gen_marine, PLAYER1);
+ex_summon_model(t, ob_marine, PLAYER1);
 t = gTiles[# 3, 5];
-ex_create_model(t, gen_scout, PLAYER1);
+ex_summon_model(t, ob_scout, PLAYER1);
 t = gTiles[# 3, 4];
-ex_create_model(t, gen_sMarine, PLAYER1);
+ex_summon_model(t, ob_sMarine, PLAYER1);
 t = gTiles[# 4, 5];
-ex_create_model(t, gen_tMarine, PLAYER1);
+ex_summon_model(t, ob_tMarine, PLAYER1);
 t = gTiles[# 5, 0];
-ex_create_model(t, gen_marine, PLAYER2)
+ex_summon_model(t, ob_marine, PLAYER2);
 t = gTiles[# 5, 1];
-ex_create_model(t, gen_tMarine, PLAYER2)
+ex_summon_model(t, ob_tMarine, PLAYER2);
 t = gTiles[# 4, 1];
-ex_create_model(t, gen_sMarine, PLAYER2)
+ex_summon_model(t, ob_sMarine, PLAYER2);
 t = gTiles[# 3, 0];
-ex_create_model(t, gen_scout, PLAYER2)
+ex_summon_model(t, ob_scout, PLAYER2);
 t = gTiles[# 4, 6];
-var _d = instance_create_depth(t.x, t.y, t.depth-1, ob_dummy);
-_d.sprite_index = sp_command_centerP1;
+ex_summon_commandcenter(t, ob_commCenter, PLAYER1);
 t = gTiles[# 4, 0];
-instance_create_depth(t.x, t.y, t.depth-1, ob_dummy);
+ex_summon_commandcenter(t, ob_commCenter, PLAYER2);
+
+CONTROL.tile_list = gTiles;

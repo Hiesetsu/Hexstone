@@ -15,7 +15,7 @@ with(ob_tileHex)
 	image_blend = startColor;
 }	
 ds_list_empty(CONTROL.attackable_tiles);
-CONTROL.target = noone;
+CONTROL.defender = noone;
 CONTROL.attacker = noone;
-CONTROL.targeting_occurring = false;
+CONTROL.attacking_occurring = false;
 CONTROL.taunt_in_range = false;

@@ -6,6 +6,7 @@ if(hovered_tile != noone)
 	{
 		if(model && !model.mortally_wounded && !model.pending_destroyed)
 		{
+			ex_hide_card(model);
 			if(model.owner == ob_controller.current_turn && ex_can_move(model))
 			{
 				if(!moving_node)
@@ -22,9 +23,9 @@ if(hovered_tile != noone)
 					}
 				}
 			}
-			else if(model.owner == ob_controller.current_turn && ex_can_act(model) && !model.has_move && CONTROL.attacker = noone)
+			else if(model.owner == ob_controller.current_turn && ex_can_act(model) && !ex_can_move(model) && CONTROL.attacker = noone)
 			{
-				ex_gettargets(id, model.combat_range);
+				ex_get_attacktargets(id, model.combat_range);
 			}
 			else{
 			//ex_clear_pathing();

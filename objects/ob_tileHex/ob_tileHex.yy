@@ -179,6 +179,34 @@
             "value": "$9B97FE",
             "varName": "attackColorVacant",
             "varType": 7
+        },
+        {
+            "id": "35e452a5-7768-4880-aa6c-fdb35ccc9548",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "$4b9b50",
+            "varName": "targetColor",
+            "varType": 7
+        },
+        {
+            "id": "30611483-a9ec-4a26-bdd9-3f09a8046d56",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "$5ccf7b",
+            "varName": "targetColorVacant",
+            "varType": 7
         }
     ],
     "solid": false,

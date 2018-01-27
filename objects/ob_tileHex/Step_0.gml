@@ -9,6 +9,11 @@ if(move_node)
 			image_blend = merge_color(image_blend, attackColorVacant, 0.05);
 		else 
 			image_blend = merge_color(image_blend, attackColor, 0.05);
+}else if(target_node){
+	if(model == noone)
+			image_blend = merge_color(image_blend, targetColorVacant, 0.05);
+		else 
+			image_blend = merge_color(image_blend, targetColor, 0.05);
 }else if(hovered){
 	if(colorDirection = 0)
 	{
@@ -19,7 +24,7 @@ if(move_node)
 	}
 	else
 	{
-		image_blend = merge_color(image_blend, startColor, 0.05);
+		//image_blend = merge_color(image_blend, startColor, 0.1);
 	}
 	if(image_blend == startColor)
 		colorDirection = 0;

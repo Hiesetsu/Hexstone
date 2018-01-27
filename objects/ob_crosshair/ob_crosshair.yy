@@ -4,7 +4,26 @@
     "mvc": "1.0",
     "name": "ob_crosshair",
     "eventList": [
-        
+        {
+            "id": "fd71d724-6056-4161-9957-e13b4bd4caa8",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "a0681ccc-6f2a-465b-9360-5c61eb31b2a3"
+        },
+        {
+            "id": "1fcbb4e0-5263-45cb-9e69-161e2c9d9c60",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "a0681ccc-6f2a-465b-9360-5c61eb31b2a3"
+        }
     ],
     "maskSpriteId": "10ecb986-ef5d-468e-8cc4-fb4bd2ef8903",
     "overriddenProperties": null,

@@ -1,7 +1,4 @@
-mid_to_string = ds_map_create();
-mid_to_string[? MARINE] = "Marine";
-mid_to_string[? SCOUT] = "Scout";
-mid_to_string[? TMARINE] = "Brawler Marine";
+
 
 range_to_string = ds_map_create();
 range_to_string[? MELEE] = "M";
@@ -16,3 +13,16 @@ rarity_to_string[? sp_basic_rarity] = "Basic";
 rarity_to_string[? sp_common_rarity] = "Common";
 rarity_to_string[? sp_epic_rarity] = "Epic";
 
+tag_to_string = ds_map_create();
+tag_to_string[? TROOP] = "Troop";
+tag_to_string[? VEHICLE] = "Vehicle";
+tag_to_string[? STRUCTURE] = "Structure";
+tag_to_string[? MARINE] = "Marine";
+tag_to_string[? SCOUT] = "Scout";
+tag_to_string[? ELITE] = "Elite";
+tag_to_string[? WALKER] = "Walker";
+tag_to_string[? HUNTER] = "Hunter";
+tag_to_string[? CLERIC] = "Cleric";
+tag_to_string[? SOLDIER] = "Soldier";
+tag_to_string[? CRUSADER] = "Crusader";
+tag_to_string[? COMMANDCENTER] = "Comm Center";

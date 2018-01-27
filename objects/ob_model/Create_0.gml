@@ -21,6 +21,8 @@ att_base = 2;
 hp_base = 3;
 points_base = 2;
 
+comm_center = false;
+
 combat_range = MELEE;
 
 att_effective = att_base;
@@ -30,7 +32,8 @@ hp_current = hp_effective;
 
 owner = noone;
 controller = noone;
-tags = ds_list_create();
+type = noone;
+tribe = noone;
 enchantments_base = ds_list_create();
 enchantments = ds_list_create();
 ability = noone;

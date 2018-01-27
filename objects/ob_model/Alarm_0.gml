@@ -10,6 +10,9 @@ card.rarity = rarity;
 card.art = full_art;
 card.name = name;
 card.text = card_text;
+card.type_text = CONTROL.tag_to_string[?type]==undefined?noone:CONTROL.tag_to_string[?type];
+card.tribe_text = CONTROL.tag_to_string[?tribe]==undefined?noone:CONTROL.tag_to_string[?tribe];
+
 
 card.team = owner;
 card.color = owner==PLAYER1?PLAYER1_HIGHLIGHT : PLAYER2_HIGHLIGHT;
