@@ -20,7 +20,7 @@ else
 		_def.hp_current -= _reduced;
 		_splash = instance_create_depth(_def.x, _def.y, -100, ob_damage_splash);
 		_splash.value = _reduced
-		_splash.sprite_index = sp_damage_splash_none;
+		_splash.sprite_index = sp_damage_splash_armored;
 		_splash.image_blend = c_white;
 	}
 	else

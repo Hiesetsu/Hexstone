@@ -1,49 +1,128 @@
 /// @description Insert description here
 // You can write your code in this editor
+//if(hovered_tile != noone)
+//{
+//	with(hovered_tile)
+//	{
+//		if(model && !model.mortally_wounded && !model.pending_destroyed)
+//		{
+//			ex_hide_card(model);
+//			if(model.owner != ob_controller.current_turn && attack_node)
+//			{
+//				if(CONTROL.taunt_in_range)
+//				{
+//					if(!model.taunt)
+//					{
+//						ex_floating_message(mouse_x, mouse_y, TAUNT_MESSAGE);
+//					}
+//					else
+//					{
+//						ex_model_attack(CONTROL.attacker, model);
+//					}
+//				}
+//				else
+//				{
+//					ex_model_attack(CONTROL.attacker, model);
+//				}		
+//			}			
+//		}
+//		else if(move_node){
+//			var _node = self;
+//			while(_node.root != noone)
+//			{
+//				_node = _node.root;
+//			}
+//			ex_move_model(_node.model, _node, id);
+//		}
+//		else
+//		{
+//			if(!attack_node)
+//				ex_clear_nodes()
+//		}
+//	}
+//}
+//else if(attacking_occurring || moving_occurring)
+//{
+//	ex_clear_nodes()
+//}
+
 if(hovered_tile != noone)
 {
-	with(hovered_tile)
+	if(attacking_occurring)
 	{
-		if(model && !model.mortally_wounded && !model.pending_destroyed)
+		with(hovered_tile)
 		{
-			ex_hide_card(model);
-			if(model.owner != ob_controller.current_turn && attack_node)
+			if(model && !model.mortally_wounded && !model.pending_destroyed)
 			{
-				if(CONTROL.taunt_in_range)
+				ex_hide_card(model);
+				if(model.owner != ob_controller.current_turn && attack_node)
 				{
-					if(!model.taunt)
+					if(CONTROL.taunt_in_range)
 					{
-						ex_floating_message(mouse_x, mouse_y, TAUNT_MESSAGE);
+						if(!model.taunt)
+						{
+							ex_floating_message(mouse_x, mouse_y, TAUNT_MESSAGE);
+						}
+						else
+						{
+							ex_model_attack(CONTROL.attacker, model);
+						}
 					}
 					else
 					{
 						ex_model_attack(CONTROL.attacker, model);
-					}
+					}		
 				}
-				else
-				{
-					ex_model_attack(CONTROL.attacker, model);
-				}		
-			}			
+			}
+			else if(!attack_node)
+				ex_clear_nodes()
 		}
-		else if(move_node){
+	}
+	else if(moving_occurring)
+	{
+		with(hovered_tile)
+		{
+		if(move_node){
 			var _node = self;
 			while(_node.root != noone)
 			{
 				_node = _node.root;
 			}
-			ex_move_model(_node.model, _node, id);
-		}
-		else
-		{
-			if(!attack_node)
+				ex_move_model(_node.model, _node, id);
+			}
+			else if(!model){
 				ex_clear_nodes()
+			}
+			else if(model!=CONTROL.mover)
+			{
+				ex_floating_message(mouse_x, mouse_y, IN_THE_WAY_MESSAGE);
+			}
 		}
 	}
+	else if (play_model_occurring)
+	{
+		with(hovered_tile)
+		{
+			if(play_node)
+			{
+				ex_play_model(id, CONTROL.model_to_summon, CONTROL.current_turn, CONTROL.battlecry);
+				ex_clear_nodes()
+			}
+		}
+	}
+	else if(targeting_occuring)
+	{
+		
+	}
+	else
+	{
+		
+	}
 }
-else if(attacking_occurring || moving_occurring)
+//didn't click on node, clear
+else
 {
-	ex_clear_nodes()
+	//ex_clear_nodes()
 }
 //var _ob = instance_create_depth(mouse_x, mouse_y, -100, ob_floating_message);
 //_ob.message = "A Model with Taunt is in the way";

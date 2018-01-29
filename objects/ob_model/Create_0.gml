@@ -15,6 +15,7 @@
 #macro REMOVEALARM 3
 name = "Default";
 card_text = "";
+card = noone;
 art = sp_marine;
 full_art = sp_marineFullArt;
 att_base = 2;
@@ -34,6 +35,7 @@ owner = noone;
 controller = noone;
 type = noone;
 tribe = noone;
+battlecry = noone;
 enchantments_base = ds_list_create();
 enchantments = ds_list_create();
 ability = noone;
@@ -57,10 +59,23 @@ taunt = false;
 armored = false;
 shielded = false;
 stealthed = false;
+blitz = false;
+slow = false;
+lethal = false;
+elusive = false;
 
+windfury = false;
+stormstep = false;
+
+deepstrike = false;
+flanking = false;
+ambush = false;
 
 mortally_wounded = false;
 pending_destroyed = false;
+
+//when a model is animating but dead
+dead = false;
 
 att_displayX = -(sprite_width*0.75/2-4);
 att_displayY = sprite_height*0.75/2-5;
@@ -68,6 +83,5 @@ hp_displayX = sprite_width*0.75/2-4;
 hp_displayY = sprite_height*0.75/2-5;
 range_displayX = 0;
 range_displayY = (sprite_height/2-3);
-card = noone;
-alarm[0] = 1;
+
 

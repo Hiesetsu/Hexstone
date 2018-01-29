@@ -2,8 +2,13 @@
 
 with(ob_model)
 {
-	if(mortally_wounded || pending_destroyed)
+	if((mortally_wounded || pending_destroyed) && !dead)
 	{
+		dead = true;
+		if(owner = PLAYER1)
+			CONTROL.player1_model_count--;
+		else
+			CONTROL.player2_model_count--;
 		alarm[REMOVEALARM] = room_speed;
 		tile.model = noone;
 		var _p = path_add();

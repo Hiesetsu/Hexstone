@@ -3,9 +3,9 @@
 var _haloColor = $000000;
 if(ex_can_move(id) && ob_controller.current_turn = owner)
 {
-	draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00DD00, 0.90);
+	draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00DD00, 0.80);
 }else if(ex_can_act(id) && ob_controller.current_turn = owner){
-	draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00FFFF, 0.90);
+	draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00FFFF, 0.80);
 }
 draw_self();
 draw_sprite(art, 0, x, y);
@@ -25,5 +25,5 @@ if(att_effective>0)
 if(shielded)
 {
 	var c = owner==PLAYER1 ? PLAYER1_COLOR : PLAYER2_COLOR;
-	draw_sprite_ext(sp_shield, 0, x, y, 1, 1, 0, $37ACf7, 1);
+	draw_sprite_ext(sp_shield, 0, x, y, 1, 1, 0, c, 1);
 }

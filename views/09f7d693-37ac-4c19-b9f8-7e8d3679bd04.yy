@@ -10,7 +10,8 @@
         "ed63b511-5cb7-4aba-a4af-7de83dc581b2",
         "8ddf48ae-c229-4318-bc46-0fdb345f3e2a",
         "538be02e-3e33-43dc-98a6-d3371f94d066",
-        "75cabf82-5fb8-4959-a647-c75fb51b207c"
+        "75cabf82-5fb8-4959-a647-c75fb51b207c",
+        "c06ee038-deb0-4bc7-b4a7-ac3ebfe5580b"
     ],
     "filterType": "GMSprite",
     "folderName": "Bases",

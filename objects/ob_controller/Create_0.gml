@@ -4,23 +4,37 @@
 #macro CONTROL ob_controller
 current_turn = PLAYER2;
 turn_number = 0;
+model_limit = 10;
+player1_model_count = 0;
+player2_model_count = 0;
 moveable_tiles = ds_list_create();
 attackable_tiles = ds_list_create();
 targetable_tiles = ds_list_create();
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 hovered_tile = noone;
 
 tile_list = noone;
 
+model_to_summon = noone;
+army_list_slot = noone;
+battlecry = noone;
+play_model_occurring = false;
+//************************//
+effect_being_targeted = noone;
+targeter = noone;
+targeting_occuring = false;
+//************************//
 attacker = noone;
 defender = noone;
 attacking_occurring = false;
+//************************//
 mover = noone;
 moving_occurring = false;
-targeter = noone;
-targeting_occuring = false;
-
+//************************//
 taunt_in_range = false;
+////////////////////////////////////////////////////////////////////////////////////////////
 
 debug_x = room_width-280;
 debug_y = 20;
@@ -49,8 +63,14 @@ alarm[0] = 1;
 #macro SOLDIER 9
 #macro CRUSADER 10
 
+//Special Rules
+#macro FLANKING 1
+#macro DEEPSTRIKE 2
+#macro AMBUSH 3
+
 //Floating Messages
 #macro TAUNT_MESSAGE "A Model with Taunt is in the way"
+#macro IN_THE_WAY_MESSAGE "A Model is in the way"
 
 ex_macro_to_string_maps();
 
