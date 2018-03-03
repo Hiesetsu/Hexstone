@@ -9,8 +9,9 @@ var _owner = argument2;
 var _battlecry = argument3;
 //here, pay the cost of the model, increment the number of models for the player,
 //summon the model to the board (summoning increments model count)
-var _m = ex_summon_model(_node, _model, _owner);
+var _m = ex_summon_model(_node, _model, _owner, true);
 ex_pay_mana(_owner, _model.points_effective);
+ex_log("-"+CONTROL.player_to_string[?_owner]+" played "+_model.name+" at "+string(_node.ex)+", "+string(_node.wy));
 if(_owner == PLAYER1)
 {
 	with(ob_armybox)

@@ -9,7 +9,7 @@
         "d72ab2ca-fd63-49c6-882e-937aa7c3c073"
     ],
     "filterType": "GMScript",
-    "folderName": "Phases",
+    "folderName": "Phases (Mechanical game logic)",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

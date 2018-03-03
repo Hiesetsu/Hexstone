@@ -5,6 +5,14 @@ with(ob_model)
 	if((mortally_wounded || pending_destroyed) && !dead)
 	{
 		dead = true;
+		if(mortally_wounded)
+		{
+			ex_log("-"+CONTROL.player_to_string[?owner]+"'s "+name+" died to damage.");
+		}
+		else if (pending_destroyed)
+		{
+			ex_log("-"+CONTROL.player_to_string[?owner]+"'s "+name+" was destroyed.");
+		}
 		if(owner = PLAYER1)
 			CONTROL.player1_model_count--;
 		else

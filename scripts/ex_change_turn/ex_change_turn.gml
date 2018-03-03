@@ -66,4 +66,9 @@ with(ob_manabar)
 if(CONTROL.current_turn = PLAYER1)
 {
 	CONTROL.turn_number++;
+	ex_log("+------------------+\n|Turn "+string(CONTROL.turn_number)+" start|\n+------------------+");
+}
+else
+{
+	ex_log(">Bottom of turn "+string(CONTROL.turn_number));
 }

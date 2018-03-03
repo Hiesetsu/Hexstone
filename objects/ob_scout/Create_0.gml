@@ -15,8 +15,6 @@ tribe = SCOUT;
 
 combat_range = RANGED;
 
-flanking = true;
-
 att_effective = att_base;
 hp_effective = hp_base;
 points_effective = points_base;

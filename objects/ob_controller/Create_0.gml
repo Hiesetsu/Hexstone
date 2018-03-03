@@ -11,6 +11,8 @@ moveable_tiles = ds_list_create();
 attackable_tiles = ds_list_create();
 targetable_tiles = ds_list_create();
 
+log = "Game Start\n";
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 hovered_tile = noone;
@@ -71,6 +73,11 @@ alarm[0] = 1;
 //Floating Messages
 #macro TAUNT_MESSAGE "A Model with Taunt is in the way"
 #macro IN_THE_WAY_MESSAGE "A Model is in the way"
+
+//Timeing
+#macro SECOND room_speed
+#macro HALF_SECOND = room_speed/2
+#macro QUARTER_SECOND = room_speed/4
 
 ex_macro_to_string_maps();
 

@@ -17,8 +17,9 @@ _model.has_move = false;
 _model.x = _endNode.x;
 _model.y = _endNode.y;
 _endNode.model = _model;
-
 _startNode.model = noone;
+
+ex_log("-"+CONTROL.player_to_string[?_model.owner]+"'s "+_model.name+" moved to "+string(_endNode.ex)+", "+string(_endNode.wy));
 
 ex_clear_pathing();
 
