@@ -5,9 +5,10 @@
 event_inherited();
 
 name = "Skirmisher";
-art = sp_tMarine;
-full_art = sp_tMarineFullart;
+art = sp_sMarine;
+full_art = sp_sMarineFullart;
 rarity = sp_common_rarity;
+card_text = "Shielded.";
 
 att_base = 4;
 hp_base = 3;

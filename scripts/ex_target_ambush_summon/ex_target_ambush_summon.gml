@@ -1,5 +1,4 @@
-ex_clear_nodes();
-CONTROL.targeting_occuring = true;
+///@function ex_target_ambush_summon()
 with(ob_model)
 {
 	if(CONTROL.current_turn != owner && !comm_center)
@@ -10,7 +9,7 @@ with(ob_model)
 			var _t = tile.neighbors[|_i];
 			if(!_t.model)
 			{
-				_t.target_node = true;
+				_t.play_node = true;
 			}
 		}
 	}

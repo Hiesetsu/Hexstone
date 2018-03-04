@@ -4,11 +4,12 @@
     "mvc": "1.1",
     "name": "9349dd25-d8f2-40a3-92d6-1cf6d0abaac2",
     "children": [
-        "2c3c5fe1-a847-4e37-b339-0e17fd9fdecf",
-        "e1629262-7eaf-431d-9cc9-03460826c0b7",
-        "e534fb66-9565-4d67-81e4-5a1112957f10",
-        "9c78f7ed-38f1-4d9d-bf6b-26106b16c181",
-        "972651e2-a393-4b07-9370-5d4382b7ae3b"
+        "972651e2-a393-4b07-9370-5d4382b7ae3b",
+        "5ee7e61b-dfb9-49c8-b888-538a8b775d30",
+        "22a2ed00-70b0-46a4-8158-3e3851d7d984",
+        "2eab1dc8-2115-482e-a176-29ea09177a39",
+        "89603df7-1d8a-41e5-9482-8ddaa167fdba",
+        "1aa62201-3168-4ac0-85d2-fd241bca07d1"
     ],
     "filterType": "GMObject",
     "folderName": "Marines",

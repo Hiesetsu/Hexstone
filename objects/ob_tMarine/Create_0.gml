@@ -8,6 +8,7 @@ name = "Defender";
 art = sp_tMarine;
 full_art = sp_tMarineFullart;
 rarity = sp_common_rarity;
+card_text = "Taunt.";
 
 att_base = 1;
 hp_base = 5;

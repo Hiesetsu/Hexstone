@@ -57,9 +57,9 @@ else if(moving_occurring && hovered_tile != noone)
 		move_indicator.visible = true;
 	}
 }
-else if(targeting_occuring && hovered_tile != noone)
+else if(play_model_occurring && hovered_tile != noone)
 {
-	if(hovered_tile.target_node)
+	if(hovered_tile.play_node)
 	{
 		move_indicator.x = hovered_tile.x;
 		move_indicator.y = hovered_tile.y;

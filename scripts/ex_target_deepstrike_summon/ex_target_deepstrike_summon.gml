@@ -1,9 +1,8 @@
-ex_clear_nodes();
-CONTROL.targeting_occuring = true;
+///@function ex_deepstrike_normal_summon()
 with(ob_tileHex)
 {
 	if(!model)
 	{
-		target_node = true;
+		play_node = true;
 	}
 }

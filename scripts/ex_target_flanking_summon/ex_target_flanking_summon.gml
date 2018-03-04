@@ -1,5 +1,5 @@
-ex_clear_nodes();
-CONTROL.targeting_occuring = true;
+///@function ex_target_flanking_summon()
+
 var _i = 0;
 var _j = 0;
 
@@ -12,6 +12,6 @@ for(_i = 0; _i<14; _i++)
 	var _t = CONTROL.tile_list[# _j, _i%7];
 	if(!_t.model)
 	{
-		_t.target_node = true;
+		_t.play_node = true;
 	}
 }

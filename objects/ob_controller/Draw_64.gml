@@ -27,9 +27,6 @@ if(DEBUG)
 			line+=linebreak;
 			ex_draw_text_font(debug_x, debug_y+line, "Move: "+string(_hoveredModel.has_move)+" Action: "+string(_hoveredModel.has_action), c_white, fo_belwe_med);
 			line+=linebreak;
-			ex_draw_text_font(debug_x, debug_y+line, "Exhausted: "+(_hoveredModel.exhausted?"Yes":"No"), c_white, fo_belwe_med);
-			line+=linebreak;
-			ex_draw_text_font(debug_x, debug_y+line, "Ability: None \nEnchantments: None", c_white, fo_belwe_med);
 		}
 	}
 }
