@@ -53,11 +53,11 @@ for(_i =0; _i<ds_list_size(_closed); _i++)
 {
 	_currentNode = _closed[| _i];
 	if(_currentNode.model == noone)
-		_currentNode.move_node = true;
+		_currentNode.target = true;
 }
-_startNode.moving_node = true;
+_startNode.source_node = true;
 ds_list_copy(CONTROL.moveable_tiles, _closed);
-CONTROL.moving_occurring = true;
+CONTROL.state = TARGET_MOVE;
 CONTROL.mover = _startNode.model;
 ds_list_destroy(_closed);
 

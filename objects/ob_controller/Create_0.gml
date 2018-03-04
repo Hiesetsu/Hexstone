@@ -14,6 +14,16 @@ targetable_tiles = ds_list_create();
 log = "Game Start\n";
 
 //////////////////////////////////////////////////////////////////////////////////////////
+#macro DEFAULT_STATE 0
+#macro PLAY_MODEL 1
+#macro TARGET_MOVE 2
+#macro TARGET_ATTACK 3
+#macro TARGET_BATTLECRY 4
+#macro TARGET_ABILITY 5
+#macro TARGET_CARD 6
+#macro CHOOSE_CARD 7
+
+state = DEFAULT_STATE;
 
 hovered_tile = noone;
 
@@ -22,7 +32,6 @@ tile_list = noone;
 model_to_summon = noone;
 army_list_slot = noone;
 battlecry = noone;
-play_model_occurring = false;
 //************************//
 effect_being_targeted = noone;
 targeter = noone;
@@ -30,10 +39,8 @@ targeting_occuring = false;
 //************************//
 attacker = noone;
 defender = noone;
-attacking_occurring = false;
 //************************//
 mover = noone;
-moving_occurring = false;
 //************************//
 taunt_in_range = false;
 ////////////////////////////////////////////////////////////////////////////////////////////

@@ -9,7 +9,7 @@ if(hovered_tile != noone)
 			ex_hide_card(model);
 			if(model.owner == ob_controller.current_turn && ex_can_move(model))
 			{
-				if(!moving_node)
+				if(!source_node)
 				{
 					ex_getpath(id, 2);
 					model.alarm[2] = room_speed/2;
@@ -23,7 +23,7 @@ if(hovered_tile != noone)
 					}
 				}
 			}
-			else if(model.owner == ob_controller.current_turn && ex_can_act(model) && !ex_can_move(model) && CONTROL.attacker = noone)
+			else if(model.owner == ob_controller.current_turn && ex_can_act(model) && !ex_can_move(model) && CONTROL.state != TARGET_ATTACK)
 			{
 				ex_get_attacktargets(id, model.combat_range);
 			}

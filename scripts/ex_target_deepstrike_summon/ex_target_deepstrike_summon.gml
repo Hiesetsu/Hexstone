@@ -3,6 +3,6 @@ with(ob_tileHex)
 {
 	if(!model)
 	{
-		play_node = true;
+		target = true;
 	}
 }

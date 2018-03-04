@@ -7,14 +7,14 @@ crosshair.attacker = noone;
 
 move_indicator.visible = false;
 move_indicator.sprite_index = sp_move_indictor;
-if(attacking_occurring && hovered_tile != noone)
+if(CONTROL.state == TARGET_ATTACK && hovered_tile != noone)
 {
 	var m = hovered_tile.model;
 	if(m!=noone)
 	{
 		if(m.owner != attacker.owner)
 		{
-			if(hovered_tile.attack_node)
+			if(hovered_tile.target)
 			{
 				crosshair.x = m.x;
 				crosshair.y = m.y;
@@ -47,9 +47,9 @@ if(attacking_occurring && hovered_tile != noone)
 		}
 	}
 }
-else if(moving_occurring && hovered_tile != noone)
+else if(CONTROL.state == TARGET_MOVE && hovered_tile != noone)
 {
-	if(hovered_tile.move_node)
+	if(hovered_tile.target)
 	{
 		move_indicator.x = hovered_tile.x;
 		move_indicator.y = hovered_tile.y;
@@ -57,9 +57,9 @@ else if(moving_occurring && hovered_tile != noone)
 		move_indicator.visible = true;
 	}
 }
-else if(play_model_occurring && hovered_tile != noone)
+else if(state == PLAY_MODEL && hovered_tile != noone)
 {
-	if(hovered_tile.play_node)
+	if(hovered_tile.target)
 	{
 		move_indicator.x = hovered_tile.x;
 		move_indicator.y = hovered_tile.y;

@@ -4,7 +4,7 @@
 ///@param {real} battlecry
 ///@param {real} list_slot
 ex_clear_nodes();
-CONTROL.play_model_occurring = true;
+CONTROL.state = PLAY_MODEL;
 CONTROL.model_to_summon = argument1;
 CONTROL.battlecry = argument2;
 CONTROL.army_list_slot = argument3;

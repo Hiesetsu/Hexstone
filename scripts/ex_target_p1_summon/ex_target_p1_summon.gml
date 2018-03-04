@@ -18,7 +18,7 @@ with(ob_commCenter)
 			var _t = tile.neighbors[|_i];
 			if(!_t.model)
 			{
-				_t.play_node = true;
+				_t.target = true;
 			}
 		}
 	}
