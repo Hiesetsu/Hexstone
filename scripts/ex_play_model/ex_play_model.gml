@@ -7,42 +7,36 @@ var _node = argument0;
 var _model = argument1;
 var _owner = argument2;
 var _battlecry = argument3;
-//here, pay the cost of the model, increment the number of models for the player,
-//summon the model to the board (summoning increments model count)
-var _m = ex_summon_model(_node, _model, _owner, true);
-ex_pay_mana(_owner, _model.points_effective);
-ex_log("-"+CONTROL.player_to_string[?_owner]+" played "+_model.name+" at "+string(_node.ex)+", "+string(_node.wy));
-if(_owner == PLAYER1)
-{
-	with(ob_armybox)
-	{
-		if(owner == PLAYER1)
-		{
-			army_list[# CONTROL.army_list_slot, AL_NUMBER] -= 1; 
-			buttons[|floor(CONTROL.army_list_slot/4)].number--;
-			points_remaining = ex_count_army_point_total(army_list);
-		}
-	}
-}
-else
-{
-	with(ob_armybox)
-	{
-		if(owner == PLAYER2)
-		{
-			army_list[# CONTROL.army_list_slot, AL_NUMBER] -= 1; 
-			buttons[|floor(CONTROL.army_list_slot/4)].number--;
-			points_remaining = ex_count_army_point_total(army_list);
-		}
-	}
-}
-
-//here, triggers which care about WHENEVER a model is played are triggered
 
 //if the model has a battlecry, it occurs here
 if(_battlecry)
 {
-	
+	//preserve the slot and model to play after battlecry 
+	var _model_to_summon = CONTROL.model_to_summon ;
+	var _list_slot = CONTROL.army_list_slot;
+	ex_clear_nodes();
+	CONTROL.state = TARGET_BATTLECRY;
+	CONTROL.model_to_summon = _model_to_summon;
+	CONTROL.node_to_summon = _node;
+	CONTROL.army_list_slot = _list_slot;
+	var _tempMod = instance_create_depth(0, 0, 0, _model);
+	var _dummy = instance_create_depth(_node.x, _node.y, _node.depth-1, ob_dummy);
+	_dummy.sprite_index = _tempMod.sprite_index;
+	_dummy.art = _tempMod.art;
+	_dummy.image_blend = _owner == PLAYER1 ? PLAYER1_COLOR : PLAYER2_COLOR;
+	instance_destroy(_tempMod);
+	script_execute(_battlecry, _node, _model, _owner);
+	var _bc_hint = instance_create_depth(x, y, -100, ob_floating_message);
+	_bc_hint.message = CONTROL.battlecry_hint;
+	_bc_hint.stick_to_cursor = true;
+	_bc_hint.alarm[0]=-1;
 }
+//If there isn't a battlecry, simply play the model
+else{
+	//here, pay the cost of the model, increment the number of models for the player,
+	//summon the model to the board (summoning increments model count)
+	ex_play_model_from_box(_node, _model, _owner);
+}
+
 
 //here, triggers which care about AFTER a model is played are triggered

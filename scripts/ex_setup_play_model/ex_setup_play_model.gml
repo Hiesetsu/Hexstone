@@ -35,6 +35,7 @@ var _model = (_list[#(_cost+_slot), AL_MODEL]);
 _model = instance_create_depth(x, y, 1, _model);
 _button.number_held = _num;
 _button.slot = _cost+_slot;
+_button.cost_display = _model.points_effective;
 _button.attack_display = _model.att_effective;
 _button.health_display = _model.hp_effective;
 _button.model_to_summon  =_model.MID;

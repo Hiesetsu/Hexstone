@@ -15,6 +15,9 @@ if(target)
 	else if(CONTROL.state == PLAY_MODEL){
 		image_blend = merge_color(image_blend, col_summonTarget, 0.05);
 	}
+	else if(CONTROL.state == TARGET_BATTLECRY){
+		image_blend = merge_color(image_blend, col_battlecryTarget, 0.05);
+	}
 }else if(hovered){
 		if(model != noone)
 			model.image_blend = merge_color(model.image_blend, model.highlight_color, 0.05);

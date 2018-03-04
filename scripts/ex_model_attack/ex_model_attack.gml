@@ -15,27 +15,17 @@ if(_defender.combat_range == RANGED || _attacker.combat_range == RANGED)
 {
 	//Ranged attackers never take damage from their defender nor do they ever deal damage to their attacker
 	ex_log("-"+CONTROL.player_to_string[?_attacker.owner]+"'s "+_attacker.name+" attacks "+CONTROL.player_to_string[?_defender.owner]+"'s "+_defender.name+" at range.");
-	ex_deal_damage(_attacker, _defender);
+	ex_attack(_attacker, _defender);
 }
 else
 {
 	//Melee attackers trade hits with melee defenders
 	ex_log("-"+_attacker.name+" attacks "+_defender.name+" directly.");
-	ex_deal_damage(_attacker, _defender);
+	ex_attack(_attacker, _defender);
 	ex_log("-"+CONTROL.player_to_string[?_defender.owner]+"'s "+_defender.name+" counter-attacks "+CONTROL.player_to_string[?_attacker.owner]+"'s "+_attacker.name);
-	ex_deal_damage(_defender, _attacker);
+	ex_attack(_defender, _attacker);
 }
 _attacker.has_action = false;
-if(_defender.hp_current<=0)
-{
-	ex_log("-"+CONTROL.player_to_string[?_defender.owner]+"'s "+_defender.name+" was mortally wounded.");
-	_defender.mortally_wounded = true;
-}
-if(_attacker.hp_current<=0)
-{
-	ex_log("-"+CONTROL.player_to_string[?_attacker.owner]+"'s "+_attacker.name+" was mortally wounded.");
-	_attacker.mortally_wounded = true;
-}
 
 //AFTER ATTACK
 //Here we ask if there are any effects that care about an attack ending which will take place after damage from combat is resolved and before deaths are processed

@@ -1,5 +1,5 @@
 {
-    "id": "71ac74e9-83ae-42e5-a954-705a47d1de71",
+    "id": "d946706b-68b0-4f4b-b323-faf455e2e41b",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "ex_deal_damage",

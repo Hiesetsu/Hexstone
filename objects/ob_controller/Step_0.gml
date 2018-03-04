@@ -68,3 +68,14 @@ else if(state == PLAY_MODEL && hovered_tile != noone)
 		move_indicator.sprite_index = sp_target_indicator;
 	}
 }
+else if(state == TARGET_BATTLECRY && hovered_tile != noone)
+{
+	if(hovered_tile.target)
+	{
+		move_indicator.x = hovered_tile.x;
+		move_indicator.y = hovered_tile.y;
+		move_indicator.depth = hovered_tile.depth-10;
+		move_indicator.visible = true;
+		move_indicator.sprite_index = sp_target_indicator;
+	}
+}

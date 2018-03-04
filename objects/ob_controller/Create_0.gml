@@ -30,12 +30,18 @@ hovered_tile = noone;
 tile_list = noone;
 
 model_to_summon = noone;
+node_to_summon = noone;
 army_list_slot = noone;
 battlecry = noone;
+//target of battlecry (BATTLECRY EFFECTS MUST BE ORDERED TARGET, VALUE)
+battlecry_target = noone;
+//values to be used by battlecry script (may be an array or list to pass more complex values)
+battlecry_val = 0;
+battlecry_hint = "";
+battlecry_log = "";
 //************************//
 effect_being_targeted = noone;
 targeter = noone;
-targeting_occuring = false;
 //************************//
 attacker = noone;
 defender = noone;

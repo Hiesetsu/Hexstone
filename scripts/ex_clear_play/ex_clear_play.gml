@@ -8,5 +8,8 @@ with(ob_tileHex)
 	image_blend = startColor;
 }
 CONTROL.model_to_summon = noone;
+CONTROL.node_to_summon = noone;
 CONTROL.battlecry = noone;
+CONTROL.battlecry_target = noone;
+CONTROL.battlecry_val = noone;
 CONTROL.army_list_slot = noone;
