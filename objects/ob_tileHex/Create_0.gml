@@ -3,14 +3,11 @@
 neighbors = noone;
 model = noone;
 passable = true;
-//if true, this node is in range of an attacking or moving model
-attack_node = false;
-move_node = false;
-play_node = false;
-//this node contains the model currently attacking or currently moving
-attacking_node = false;
-moving_node = false;
-//targetting_node = false;
+
+//if true, this node is an eligible target
+target = false;
+//if true, this node is the source of an effect (movement, attacking, etc)
+source_node = false;
 //distance from a currently attacking or moving model
 g_val_att = 0;
 g_val = 0;
@@ -23,3 +20,9 @@ root_play = noone;
 //Grid position on control object
 ex = 0;
 wy = 0;
+
+//Colors
+col_moveTarget = $FFD37F
+col_attackVacant = $9B97FE;
+col_attackTarget = $362CC4;
+col_summonTarget = $5ccf7b;

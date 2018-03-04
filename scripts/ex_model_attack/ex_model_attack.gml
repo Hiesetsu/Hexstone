@@ -4,7 +4,7 @@
 /// @param {real} defender id for a model object which is being attacked
 var _attacker = argument0;
 var _defender = argument1;
-ex_clear_attacktargets();
+ex_clear_nodes();
 //PROPOSE ATTACK
 //Here we ask if there are any effects that care about the proposed attack, which may trigger and affect the state of the game before combat occurs
 

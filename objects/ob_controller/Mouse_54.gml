@@ -9,7 +9,7 @@ if(hovered_tile != noone)
 			ex_hide_card(model);
 			if(model.owner == ob_controller.current_turn && ex_can_act(model) && CONTROL.attacker = noone && CONTROL.mover = noone)
 			{
-				if(!attacking_node)
+				if(!source_node)
 				{
 					model.has_move = false;
 					ex_get_attacktargets(id, model.combat_range);

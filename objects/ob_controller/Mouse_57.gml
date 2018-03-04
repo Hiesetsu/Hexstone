@@ -7,7 +7,7 @@ if(hovered_tile != noone)
 		if(model && !model.mortally_wounded && !model.pending_destroyed)
 		{
 			ex_hide_card(model);
-			if(model.owner != ob_controller.current_turn && attack_node)
+			if(model.owner != ob_controller.current_turn && target)
 			{
 				if(CONTROL.taunt_in_range)
 				{

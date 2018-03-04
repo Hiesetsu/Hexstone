@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(hovered && move_node)
+if(hovered && target)
 {
 	//var _node = self;
 	//while(_node.root != noone)

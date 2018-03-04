@@ -54,7 +54,7 @@ while(ds_priority_size(_open)>0)
 			if(_startNode.model != noone && !_neighbor.model != noone)
 			{
 				if(_neighbor.model.owner !=_startNode.model.owner)
-					_neighbor.attack_node = true;
+					_neighbor.target = true;
 				if(_neighbor.model.taunt)
 				{
 					CONTROL.taunt_in_range = true;
@@ -69,13 +69,13 @@ for(_i =0; _i<ds_list_size(_closed); _i++)
 {
 	_currentNode = _closed[| _i];
 	if(_currentNode.model == noone)
-		_currentNode.attack_node = true;
+		_currentNode.target = true;
 	if(_currentNode = _startNode)
-		_currentNode.attack_node = false;
+		_currentNode.target = false;
 }
-_startNode.attacking_node = true;
+_startNode.source_node= true;
 ds_list_copy(ob_controller.attackable_tiles, _closed);
-CONTROL.attacking_occurring = true;
+CONTROL.state = TARGET_ATTACK;
 CONTROL.attacker = _startNode.model;
 ds_list_destroy(_closed);
 

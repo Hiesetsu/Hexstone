@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 hovered = false;
-if(!move_node&&!attack_node&&!play_node)
+if(!target)
 	image_blend = startColor;
 if(model != noone)
 {

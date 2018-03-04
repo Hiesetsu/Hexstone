@@ -21,7 +21,7 @@ _startNode.model = noone;
 
 ex_log("-"+CONTROL.player_to_string[?_model.owner]+"'s "+_model.name+" moved to "+string(_endNode.ex)+", "+string(_endNode.wy));
 
-ex_clear_pathing();
+ex_clear_nodes();
 
 //MOVE FINISH
 //Check if any effects care that this model has entered its new space
