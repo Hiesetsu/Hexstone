@@ -35,12 +35,20 @@ owner = noone;
 controller = noone;
 type = noone;
 tribe = noone;
+
 battlecry = noone;
-enchantments_base = ds_list_create();
-enchantments = ds_list_create();
+deathrattle = noone;
+auras = noone;
+
+attack_trigger = noone;
+after_attack_trigger = noone;
+defense_trigger = noone;
+after_defense_trigger = noone;
+
 ability = noone;
 ability_cost_base = 0;
 ability_cost_effective = ability_cost_base;
+
 audio_lines = ds_list_create();
 MID = -1;
 rarity = sp_basic_rarity;
@@ -48,6 +56,7 @@ tile = noone;
 
 has_move = true;
 has_action = true;
+just_summoned = true;
 exhausted = false;
 stunned = false;
 disarmed = false;
@@ -77,6 +86,8 @@ pending_destroyed = false;
 //when a model is animating but dead
 dead = false;
 
+extra_displayX = -(sprite_width*0.75/2-4);
+extra_displayY = -(sprite_width*0.75/2-4);
 att_displayX = -(sprite_width*0.75/2-4);
 att_displayY = sprite_height*0.75/2-5;
 hp_displayX = sprite_width*0.75/2-4;

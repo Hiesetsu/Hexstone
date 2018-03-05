@@ -19,7 +19,17 @@
         "a5cca2d3-5535-4c74-ad1a-4c401872a066",
         "03635b76-7b84-49d4-abd0-ecbef95309f0",
         "2f4112cb-8415-4a43-bd32-edf98559d20f",
-        "60a91843-36fc-4d6e-9ad3-875b94a769e5"
+        "60a91843-36fc-4d6e-9ad3-875b94a769e5",
+        "8ba757cb-c801-48c7-958e-7e51ffd0c916",
+        "c1307d4f-524f-46af-9e22-f66d53a8c908",
+        "50133d62-1f1e-4dd4-b029-e38e24b9e2c9",
+        "6dce5623-a93c-4580-9ac3-d53f4de362af",
+        "38a3d9cd-4bd1-450c-93e8-bbee230331a8",
+        "7fc7721a-ef21-4090-b398-0194eaa23479",
+        "35af6aa6-5783-41c3-b90b-c19a37ced6fe",
+        "2df99268-192c-4f8d-87e4-05f17f78c24b",
+        "14dae115-8101-42e7-873d-a723ad05e685",
+        "74e3e7a5-ef42-44f7-845c-36ecf0edea0f"
     ],
     "filterType": "GMSprite",
     "folderName": "Model Art",

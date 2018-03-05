@@ -8,6 +8,10 @@ number_held = 0
 combat_range = MELEE;
 activated = false;
 playable = false;
+
+not_enough_mana = false;
+too_many_models = false;
+
 art = sp_marine;
 summon_rule = noone;
 owner = PLAYER1;

@@ -1,6 +1,6 @@
 
 {
-    "name": "room0",
+    "name": "rm_gameBoard",
     "id": "ad0bbfd4-d50d-441f-a22e-ff5981796357",
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
@@ -24,7 +24,7 @@
             "id": "4accaa4e-b543-4537-a1d8-e7b95296accb",
             "depth": 0,
             "grid_x": 17,
-            "grid_y": 4,
+            "grid_y": 15,
             "hierarchyFrozen": false,
             "hierarchyVisible": true,
             "inheritLayerDepth": false,

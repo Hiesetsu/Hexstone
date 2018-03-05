@@ -1,4 +1,4 @@
-///@function ex_play_model(node, model, owner)
+///@function bc_havoc(node, model, owner)
 ///@param {real} node
 ///@param {real} model
 ///@param {real} owner

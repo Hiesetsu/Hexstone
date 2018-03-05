@@ -1,4 +1,4 @@
-///@function ex_play_model(node, model, owner)
+///@function bc_devastator(node, model, owner)
 ///@param {real} node
 ///@param {real} model
 ///@param {real} owner
@@ -13,7 +13,7 @@ CONTROL.battlecry_hint = "Deal 1 damage.";
 CONTROL.battlecry_log = "--Devastator battlecry:";
 with(ob_model)
 {
-	if(owner != _owner){
+	//if(owner != _owner){
 		tile.target = true;
-	}
+	//}
 }

@@ -1,6 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 draw_self();
+ex_draw_text_shadowed(x+sprite_width/2, y-10, "+"+string((mana_per_turn+mana_ramp>mana_per_turn_cap?mana_per_turn_cap:mana_per_turn+mana_ramp)), c_white, fo_belwe_med, 1);
 var i = 0;
 for(i = 0; i <mana_cap; i++)
 {

@@ -1,11 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 var _haloColor = $000000;
-if(ex_can_move(id) && ob_controller.current_turn = owner)
-{
-	draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00DD00, 0.80);
-}else if(ex_can_act(id) && ob_controller.current_turn = owner){
-	draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00FFFF, 0.80);
+if(CONTROL.state == DEFAULT_STATE){
+	if(ex_can_move(id) && ob_controller.current_turn = owner)
+	{
+		draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00DD00, 0.80);
+	}else if(ex_can_act(id) && ob_controller.current_turn = owner){
+		draw_sprite_ext(sp_baseHalo, 0, x, y, 1, 1, 0, $00FFFF, 0.80);
+	}
 }
 draw_self();
 draw_sprite(art, 0, x, y);
@@ -21,9 +23,13 @@ if(att_effective>0)
 {
 	ex_draw_text_centered_shadowed(x+range_displayX, y+range_displayY, combat_range==RANGED?"R":"M", c_white, fo_belwe_small, 1);
 }
-
+if(deathrattle){
+	draw_sprite(sp_deathrattle_mark, 0, x+extra_displayX, y+extra_displayY);
+}else if(lethal){
+	draw_sprite(sp_lethalmark, 0, x+extra_displayX, y+extra_displayY);
+}
 if(shielded)
 {
-	var c = owner==PLAYER1 ? PLAYER1_COLOR : PLAYER2_COLOR;
-	draw_sprite_ext(sp_shield, 0, x, y, 1, 1, 0, c, 1);
+	var c = c_white //owner==PLAYER1 ? PLAYER1_COLOR : PLAYER2_COLOR;
+	draw_sprite_ext(sp_shield, 0, x, y, 1.1, 1.1, 0, c, 1);
 }

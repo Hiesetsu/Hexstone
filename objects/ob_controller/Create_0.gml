@@ -1,8 +1,11 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 #macro DEBUG true
 #macro CONTROL ob_controller
+
+persistent = true;
+
 current_turn = PLAYER2;
+winner = noone;
 turn_number = 0;
 model_limit = 10;
 player1_model_count = 0;
@@ -71,7 +74,7 @@ alarm[0] = 1;
 #macro SCOUT 4
 #macro ELITE 5
 #macro WALKER 6
-#macro DRONE = 11
+#macro DRONE 11
 
 #macro HUNTER 7
 #macro CLERIC 8
@@ -86,6 +89,13 @@ alarm[0] = 1;
 //Floating Messages
 #macro TAUNT_MESSAGE "A Model with Taunt is in the way"
 #macro IN_THE_WAY_MESSAGE "A Model is in the way"
+#macro SUMMONING_SICK_MESSAGE "Models can't act the turn they're summoned"
+#macro IMMOBILE_MESSAGE "That model is immobile."
+#macro CANT_ATTACK_MESSAGE "That model cannot aact."
+#macro ALREADY_ACTED_MESSAGE "That model already acted."
+#macro NOT_ENOUGH_MANA_MESSAGE "Not enough mana."
+#macro TOO_MANY_MODELS_MESSAGE "You have too many models!"
+#macro NO_ONE_TO_AMBUSH_MESSAGE "There's no one to ambush."
 
 //Timeing
 #macro SECOND room_speed

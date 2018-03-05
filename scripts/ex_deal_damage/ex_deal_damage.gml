@@ -10,6 +10,7 @@ if(_tar.shielded)
 	_splash = instance_create_depth(_tar.x, _tar.y, -100, ob_damage_splash);
 	_splash.sprite_index = sp_damage_splash_none;
 	_splash.image_blend = $99FFFF;
+	_val = 0;
 	ex_log("-"+CONTROL.player_to_string[?_tar.owner]+"'s "+_tar.name+" took no damage due to shielding.");
 }
 else
@@ -18,6 +19,7 @@ else
 	{
 		var _reduced = _val-1;
 		_reduced = _reduced<1 ? 1 : _reduced;
+		_val = _reduced;
 		_tar.hp_current -= _reduced;
 		_splash = instance_create_depth(_tar.x, _tar.y, -100, ob_damage_splash);
 		_splash.value = _reduced
@@ -38,3 +40,5 @@ if(_tar.hp_current<=0)
 	ex_log("-"+CONTROL.player_to_string[?_tar.owner]+"'s "+_tar.name+" was mortally wounded.");
 	_tar.mortally_wounded = true;
 }
+
+return _val;

@@ -3,7 +3,7 @@
 //TOFIX cleanup shitty fade
 if(fade)
 {
-	image_alpha = lerp(image_alpha, 0, 0.1);
+	image_alpha = lerp(image_alpha, 0, fade_speed);
 }
 if(image_alpha<1/64)
 {
