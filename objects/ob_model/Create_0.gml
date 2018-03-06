@@ -38,7 +38,13 @@ tribe = noone;
 
 battlecry = noone;
 deathrattle = noone;
-auras = noone;
+
+//list of scripts for auras originating from this model
+auras_stat = noone;
+auras_other = noone;
+//list of scripts attached by auras (for identification and reversal)
+applied_auras_stat = noone;
+applied_auras_other = noone;
 
 attack_trigger = noone;
 after_attack_trigger = noone;
@@ -49,7 +55,14 @@ ability = noone;
 ability_cost_base = 0;
 ability_cost_effective = ability_cost_base;
 
-audio_lines = ds_list_create();
+//sounds
+audio_summon = noone;
+audio_attack = noone;
+audio_death = noone;
+audio_ability = noone;
+//script for conditional alternate audio
+audio_special = noone;
+
 MID = -1;
 rarity = sp_basic_rarity;
 tile = noone;
@@ -81,10 +94,12 @@ flanking = false;
 ambush = false;
 
 mortally_wounded = false;
+
 pending_destroyed = false;
 
 //when a model is animating but dead
 dead = false;
+aliveBeforeAura = true;
 
 extra_displayX = -(sprite_width*0.75/2-4);
 extra_displayY = -(sprite_width*0.75/2-4);

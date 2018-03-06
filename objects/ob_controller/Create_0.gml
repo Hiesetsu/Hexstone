@@ -1,5 +1,6 @@
 /// @description 
 #macro DEBUG true
+#macro LOG_AURA true
 #macro CONTROL ob_controller
 
 persistent = true;
@@ -17,6 +18,8 @@ targetable_tiles = ds_list_create();
 log = "Game Start\n";
 
 //////////////////////////////////////////////////////////////////////////////////////////
+
+//States
 #macro DEFAULT_STATE 0
 #macro PLAY_MODEL 1
 #macro TARGET_MOVE 2
@@ -86,6 +89,10 @@ alarm[0] = 1;
 #macro DEEPSTRIKE 2
 #macro AMBUSH 3
 
+//Aura function rules
+#macro RUN_AURA 0
+#macro RETURN_NAME 1
+
 //Floating Messages
 #macro TAUNT_MESSAGE "A Model with Taunt is in the way"
 #macro IN_THE_WAY_MESSAGE "A Model is in the way"
@@ -97,7 +104,7 @@ alarm[0] = 1;
 #macro TOO_MANY_MODELS_MESSAGE "You have too many models!"
 #macro NO_ONE_TO_AMBUSH_MESSAGE "There's no one to ambush."
 
-//Timeing
+//Timing
 #macro SECOND room_speed
 #macro HALF_SECOND = room_speed/2
 #macro QUARTER_SECOND = room_speed/4

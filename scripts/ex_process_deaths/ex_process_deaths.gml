@@ -1,8 +1,12 @@
 ///@function ex_process_deaths()
 var _defDeathrattle = ds_list_create();
 var _attDeathrattle = ds_list_create();
+au_applyStatAuras();
 with(ob_model)
 {
+	if(hp_current<=0){
+		mortally_wounded=true;
+	}
 	if((mortally_wounded || pending_destroyed) && !dead)
 	{
 		dead = true;
@@ -36,6 +40,14 @@ with(ob_model)
 		}
 	}
 }
+au_applyStatAuras();
+au_applyOtherAuras();
+var _aurasKilled = false;
+with(ob_model){
+	if((mortally_wounded||pending_destroyed)&&!dead){
+		_aurasKilled = true;
+	}
+}
 if(ds_list_size(_defDeathrattle)>0||ds_list_size(_attDeathrattle)>0){
 	var _i = 0;
 	for(_i=0; _i<ds_list_size(_defDeathrattle); _i++){
@@ -46,3 +58,4 @@ if(ds_list_size(_defDeathrattle)>0||ds_list_size(_attDeathrattle)>0){
 	}
 	ex_process_deaths();
 }
+

@@ -8,6 +8,9 @@ if(_d.shielded = true)
 {
 	return false;
 }
+if(_a.lethal && !_d.comm_center){
+	return true;
+}
 var _damage = _a.att_effective;
 if(_d.armored = true)
 {

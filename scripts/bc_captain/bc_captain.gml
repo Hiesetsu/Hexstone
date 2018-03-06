@@ -9,7 +9,7 @@ var _model = argument1;
 var _owner = argument2;
 
 ex_log("--Captain Battlecry (+1/+1 to friendly Scouts and Marines)");
-ex_floating_message_ext(_node.x, _node.y, "RALLY!!", 0.05);
+ex_floating_message_ext(_node.x, _node.y, "RALLY!!", SECOND);
 var _targets = ds_list_create();
 with(ob_model)
 {

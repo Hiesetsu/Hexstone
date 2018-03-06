@@ -9,5 +9,7 @@ with(ob_dummy){
 }
 with(ob_floating_message)
 {
-	fade = true;
+	if(stick_to_cursor){
+		fade = true;
+	}
 }

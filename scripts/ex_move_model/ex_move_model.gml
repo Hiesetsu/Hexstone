@@ -21,10 +21,13 @@ _startNode.model = noone;
 
 ex_log("-"+CONTROL.player_to_string[?_model.owner]+"'s "+_model.name+" moved to "+string(_endNode.ex)+", "+string(_endNode.wy));
 
-ex_clear_nodes();
 
 //MOVE FINISH
 //Check if any effects care that this model has entered its new space
 
 //MOVE PHASE END
 //Once all triggered phases have ended, process auras and deaths
+ex_process_deaths();
+au_applyStatAuras();
+
+ex_clear_nodes();

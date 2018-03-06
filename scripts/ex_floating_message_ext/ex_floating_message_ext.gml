@@ -9,4 +9,5 @@ var _m = argument2;
 var _t = argument3;
 
 var _fm = ex_floating_message(_x, _y, _m);
-_fm.fade_speed = _t;
+//Alarm 0 is used by floating messages to know when to start fading
+_fm.alarm[0] = _t;
