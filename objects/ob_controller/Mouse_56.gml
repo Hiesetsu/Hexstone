@@ -59,13 +59,27 @@ if(hovered_tile != noone)
 			if(target)
 			{
 				ex_play_model(id, CONTROL.model_to_summon, CONTROL.current_turn, CONTROL.battlecry);
-				ex_clear_nodes()
+				if(!CONTROL.battlecry)
+				{
+					ex_clear_nodes();
+				}
 			}
 		}
 	}
 	else if(CONTROL.state = TARGET_BATTLECRY)
 	{
-		
+		with(hovered_tile)
+		{
+			if(target){
+				if(CONTROL.battlecry_log != "")
+					ex_log(CONTROL.battlecry_log);
+				script_execute(CONTROL.battlecry, id, CONTROL.battlecry_val);
+				ex_play_model_from_box(CONTROL.node_to_summon, CONTROL.model_to_summon, CONTROL.current_turn);
+				ex_clear_nodes();
+				//PROCESS DEATH that may have been caused by the battlecry
+				ex_process_deaths();
+			}
+		}
 	}
 	else
 	{

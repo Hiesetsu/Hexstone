@@ -10,7 +10,9 @@
         "9aae47b3-e538-499a-a63f-ae3b26c97f13",
         "83cff3cc-92a0-4205-9d18-6c2268e02b2b",
         "f9212f19-5c73-4b42-95cd-10dfff75e5be",
-        "11306528-abf6-4eef-bb41-0e37fbd0cd4e"
+        "11306528-abf6-4eef-bb41-0e37fbd0cd4e",
+        "02c1c18e-3e75-4dea-8e0e-0d339f1528b6",
+        "aa49fbe4-b878-4609-9f32-6676a47b32f7"
     ],
     "filterType": "GMScript",
     "folderName": "Playing Models",

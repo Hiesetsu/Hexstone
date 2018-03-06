@@ -28,7 +28,7 @@ range_y = 40;
 name_x = 12;
 name_y = -115;
 text_x = 0;
-text_y = 60;
+text_y = 80;
 
 team = PLAYER1;
 color = PLAYER1_COLOR;

@@ -26,3 +26,4 @@ col_moveTarget = $FFD37F
 col_attackVacant = $9B97FE;
 col_attackTarget = $362CC4;
 col_summonTarget = $5ccf7b;
+col_battlecryTarget = $2276f7

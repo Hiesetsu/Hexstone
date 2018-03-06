@@ -11,6 +11,9 @@ scroll_clip = 0;
 //0-1, how far is scrolled
 scroll_amount = 1;
 
+font = fo_belwe_small;
+draw_set_font(font);
+line_height = string_height("test string");
 //Total height of the text in the log. Must be updated when text is added to log.
 text_height = 0;
 //how wide the text is allowed to be before line breaks. Never updated.

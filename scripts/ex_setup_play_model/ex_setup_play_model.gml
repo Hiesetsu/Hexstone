@@ -33,8 +33,11 @@ if(_num<=0)
 	return;
 var _model = (_list[#(_cost+_slot), AL_MODEL]);
 _model = instance_create_depth(x, y, 1, _model);
+_button.not_enough_mana = false;
+_button.too_many_models = false;
 _button.number_held = _num;
 _button.slot = _cost+_slot;
+_button.cost_display = _model.points_effective;
 _button.attack_display = _model.att_effective;
 _button.health_display = _model.hp_effective;
 _button.model_to_summon  =_model.MID;
@@ -68,11 +71,14 @@ with(ob_manabar)
 	if(owner == _box.owner)
 	{
 		_playable = _model.points_effective<=mana_current;
+		if(!_playable){
+			_button.not_enough_mana = true;
+		}
 	}
 }
 var _modelCount = _button.owner==PLAYER1?CONTROL.player1_model_count:CONTROL.player2_model_count;
 _playable = _modelCount<CONTROL.model_limit&&_playable;
-
+_button.too_many_models = _modelCount>=CONTROL.model_limit;
 _button.playable = _playable;
 instance_destroy(_model);
 

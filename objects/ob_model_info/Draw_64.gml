@@ -12,6 +12,6 @@ draw_sprite(rarity, 0, x+rarity_x, y+rarity_y);
 var range = combat_range==MELEE?"M":"R";
 ex_draw_text_centered_shadowed(x+range_x, y+range_y, string(range), c_white, fo_belwe_large, 1);
 ex_draw_text_centered_shadowed(x+name_x, y+name_y, name, c_white, fo_belwe_med, 1);
-ex_draw_text_centered(x+text_x, y+text_y, text, c_black, fo_card_text);
+ex_draw_text_centered_shadowed_ext(x+text_x, y+text_y, text, c_white, fo_card_text, 1, -1, sprite_width-16);
 var tags = (tribe_text == noone)? (type_text==noone?"":type_text):type_text+" - "+tribe_text;
 ex_draw_text_centered_shadowed(x+tags_x, y+tags_y, tags, c_white, fo_belwe_small, 1);

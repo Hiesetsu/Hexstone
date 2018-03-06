@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(hovered_tile != noone)
+if(hovered_tile != noone && CONTROL.state != TARGET_BATTLECRY&& CONTROL.state != TARGET_CARD&& CONTROL.state != TARGET_ABILITY)
 {
 	with(hovered_tile)
 	{
@@ -27,9 +27,14 @@ if(hovered_tile != noone)
 			{
 				ex_get_attacktargets(id, model.combat_range);
 			}
-			else{
-			//ex_clear_pathing();
-			//ex_clear_attacktargets();
+			else if(model.immobile && model.has_move && model.owner == ob_controller.current_turn ){
+				ex_floating_message(mouse_x, mouse_y, IMMOBILE_MESSAGE);
+			}
+			else if(model.just_summoned && model.owner == ob_controller.current_turn ){
+				ex_floating_message(mouse_x, mouse_y, SUMMONING_SICK_MESSAGE);
+			}
+			else if(!model.has_action && model.owner == ob_controller.current_turn ){
+				ex_floating_message(mouse_x, mouse_y, ALREADY_ACTED_MESSAGE);
 			}
 		}
 	}

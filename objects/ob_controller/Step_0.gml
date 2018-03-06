@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(room != rm_gameBoard)
+{
+	return;
+}
 hovered_tile = instance_position(mouse_x, mouse_y, ob_tileHex);
 crosshair.visible = false;
 crosshair.kills = false;
@@ -64,6 +68,17 @@ else if(state == PLAY_MODEL && hovered_tile != noone)
 		move_indicator.x = hovered_tile.x;
 		move_indicator.y = hovered_tile.y;
 		move_indicator.depth = hovered_tile.depth-1;
+		move_indicator.visible = true;
+		move_indicator.sprite_index = sp_target_indicator;
+	}
+}
+else if(state == TARGET_BATTLECRY && hovered_tile != noone)
+{
+	if(hovered_tile.target)
+	{
+		move_indicator.x = hovered_tile.x;
+		move_indicator.y = hovered_tile.y;
+		move_indicator.depth = hovered_tile.depth-10;
 		move_indicator.visible = true;
 		move_indicator.sprite_index = sp_target_indicator;
 	}

@@ -35,21 +35,39 @@ play_model_buttons[3]=b;
 #macro AL_NUMBER 1
 #macro AL_ACTIVE 2
 army_list = ds_grid_create(20, 4);
-ds_grid_clear(army_list, false);
-army_list[# AL_1COST, AL_MODEL] = ob_scout;
-army_list[# AL_1COST, AL_NUMBER] = 4;
-army_list[# AL_2COST, AL_MODEL] = ob_marine;
-army_list[# AL_2COST, AL_NUMBER] = 4;
-army_list[# (AL_2COST+1), AL_MODEL] = ob_tMarine;
-army_list[# (AL_2COST+1), AL_NUMBER] = 2;
+ds_grid_clear(army_list, 0);
+ex_add_model_to_box(ob_scout, id, 4);
+ex_add_model_to_box(ob_explosivedrone, id, 2);
+ex_add_model_to_box(ob_marine, id, 4);
+ex_add_model_to_box(ob_tMarine, id, 2);
+ex_add_model_to_box(ob_assassin, id, 2);
+ex_add_model_to_box(ob_devastator, id, 2);
+ex_add_model_to_box(ob_havoc, id, 2);
+ex_add_model_to_box(ob_assaultMarine, id, 2);
+ex_add_model_to_box(ob_sMarine, id, 2);
+ex_add_model_to_box(ob_bunker, id, 2);
+ex_add_model_to_box(ob_terminator, id, 2);
+ex_add_model_to_box(ob_walker, id, 2);
+ex_add_model_to_box(ob_captain, id, 1);
+//army_list[# AL_1COST, AL_MODEL] = ob_scout;
+//army_list[# AL_1COST, AL_NUMBER] = 4;
+//army_list[# AL_2COST, AL_MODEL] = ob_marine;
+//army_list[# AL_2COST, AL_NUMBER] = 4;
+//army_list[# (AL_2COST+1), AL_MODEL] = ob_tMarine;
+//army_list[# (AL_2COST+1), AL_NUMBER] = 2;
 
-army_list[# (AL_4COST), AL_MODEL] = ob_sMarine;
-army_list[# (AL_4COST), AL_NUMBER] = 2;
+//army_list[# AL_3COST, AL_MODEL] = ob_devastator;
+//army_list[# AL_3COST, AL_NUMBER] = 2;
+//army_list[# AL_3COST+1, AL_MODEL] = ob_havoc;
+//army_list[# AL_3COST+1, AL_NUMBER] = 2;
 
-army_list[# (AL_5UPCOST), AL_MODEL] = ob_walker;
-army_list[# (AL_5UPCOST), AL_NUMBER] = 2;
-army_list[# (AL_5UPCOST+1), AL_MODEL] = ob_terminator;
-army_list[# (AL_5UPCOST+1), AL_NUMBER] = 2;
+//army_list[# (AL_4COST), AL_MODEL] = ob_sMarine;
+//army_list[# (AL_4COST), AL_NUMBER] = 2;
+
+//army_list[# (AL_5UPCOST), AL_MODEL] = ob_walker;
+//army_list[# (AL_5UPCOST), AL_NUMBER] = 2;
+//army_list[# (AL_5UPCOST+1), AL_MODEL] = ob_terminator;
+//army_list[# (AL_5UPCOST+1), AL_NUMBER] = 2;
 
 points_remaining = ex_count_army_point_total(army_list);
 ////////////////////////////////////////////////////////////////////////////////////////

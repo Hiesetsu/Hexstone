@@ -36,11 +36,24 @@ with(ob_model)
 		has_move = true;
 		has_action = true;
 		exhausted = false;
+		just_summoned = false;
 	}
 	else
 	{
 		exhausted = true;
 	}
+}
+if(CONTROL.current_turn = PLAYER1)
+{
+	CONTROL.turn_number++;
+	ex_log(
+	@"	                      +------------------+
+                      |Turn "+string(CONTROL.turn_number)+@" start|
+                      +------------------+");
+}
+else
+{
+	
 }
 with(ob_manabar)
 {
@@ -61,14 +74,14 @@ with(ob_manabar)
 			mana_current+=mana_per_turn;
 			mana_current = mana_current>mana_cap?mana_cap:mana_current;
 		}
+		
+		ex_log("---Mana gained: "+string(mana_per_turn)+"");
 	}
-}
-if(CONTROL.current_turn = PLAYER1)
-{
-	CONTROL.turn_number++;
-	ex_log("+------------------+\n|Turn "+string(CONTROL.turn_number)+" start|\n+------------------+");
-}
-else
-{
-	ex_log(">Bottom of turn "+string(CONTROL.turn_number));
+	else
+	{
+		if(!(CONTROL.current_turn = PLAYER1)){
+			ex_log("---Mana floated: "+string(mana_current)+"");
+			ex_log("   <--------------Bottom of turn "+string(CONTROL.turn_number)+"-------------->");
+		}
+	}
 }
