@@ -463,6 +463,14 @@
             }
         },
         {
+            "Key": "37f36228-e72d-4c31-9dde-cbffab852c3d",
+            "Value": {
+                "id": "261a14a7-e858-45e3-98a2-5e85bfae88aa",
+                "resourcePath": "scripts\\en_captain\\en_captain.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "38a3d9cd-4bd1-450c-93e8-bbee230331a8",
             "Value": {
                 "id": "439e6e95-25e1-4ae8-a3af-f6af9c95f59a",
@@ -819,14 +827,6 @@
             "Value": {
                 "id": "ad00834d-2f7d-488b-a463-4c5aab88c074",
                 "resourcePath": "scripts\\ex_count_models_for_cost\\ex_count_models_for_cost.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "7b132d8a-141c-420e-ba3b-a477779f6830",
-            "Value": {
-                "id": "d5ceeceb-e00c-4c73-8fc9-114d54697639",
-                "resourcePath": "scripts\\rau_standardBearer\\rau_standardBearer.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1332,14 +1332,6 @@
                 "id": "d298f376-a37e-4439-a95e-9aa6d79e3f7d",
                 "resourcePath": "rooms\\rm_victoryScreen\\rm_victoryScreen.yy",
                 "resourceType": "GMRoom"
-            }
-        },
-        {
-            "Key": "b62dabce-efe1-403f-8171-535c05237e34",
-            "Value": {
-                "id": "b01cf4b8-9185-4cf4-b2f9-cc7061cb975a",
-                "resourcePath": "scripts\\rau_braveScout\\rau_braveScout.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -1878,9 +1870,8 @@
         "15d56738-a0d7-4f42-b718-2b62c68260f1",
         "21db0417-3359-4bf2-b581-6be099e219a4",
         "fcab64c5-096b-494f-9d48-d7bfa71bb5f6",
-        "b62dabce-efe1-403f-8171-535c05237e34",
         "cbcd69ac-6b29-4c4e-ab95-4937c866e043",
-        "7b132d8a-141c-420e-ba3b-a477779f6830"
+        "37f36228-e72d-4c31-9dde-cbffab852c3d"
     ],
     "tutorial": ""
 }

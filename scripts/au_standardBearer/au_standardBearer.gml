@@ -1,13 +1,13 @@
 ///@function au_standardBearer(flag)
 ///@param {real} flag
 
-//All reverse auras are called from the object they're the source of, so it is safe to access variables
+//All auras are called from the object they're the source of, so it is safe to access variables
 var _flag = argument0;
 var _auraName = "Hope: +1/+1";
 if(_flag==RETURN_NAME){
 	return _auraName;
 }
-else{
+else if(_flag==RUN_ENCHANTMENT){
 	var _neighbors=tile.neighbors;
 	if(_neighbors){
 		var _i;
@@ -27,12 +27,31 @@ else{
 						_model.mortally_wounded = false;
 					}
 					//All auras must attach the reversal script to the object they modify, IF they modify it
-					if(!_model.applied_auras_stat){
-						_model.applied_auras_stat=ds_list_create()
+					if(!_model.applied_enchantments_stat){
+						_model.applied_enchantments_stat=ds_list_create()
 					}
-					ds_list_add(_model.applied_auras_stat, rau_standardBearer);
+					ds_list_add(_model.applied_enchantments_stat, au_standardBearer);
 				}
 			}
 		}
 	}
+}
+else if(_flag==REVERSE_ENCHANTMENT){
+	//reverse auras simply reverse the effect of their counterpart. 
+	//They are removed from the model by the scripts which run the model loops.
+	//Reverse auras do NOT check conditions, they ALWAYS remove
+	//If the source is still around, IT is what has the responsibility of reapplying if the aura is still valid
+		att_effective-=1;
+		hp_effective-=1;
+		hp_current-=1;
+	 
+		if(hp_current==-1){
+			hp_current = 0;
+		}
+		if(hp_current<-1){
+			mortally_wounded = true;
+		}
+		if(LOG_AURA){
+				ex_log("["+_auraName+" <- "+name+"]");
+			}
 }

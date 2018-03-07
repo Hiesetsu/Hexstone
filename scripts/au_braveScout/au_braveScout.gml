@@ -1,15 +1,15 @@
 ///@function au_braveScout(flag)
 ///@param {real} flag
 
-//All reverse auras are called from the object they're the source of, so it is safe to access variables
+//All auras are called from the object they're the source of, so it is safe to access variables
 var _flag = argument0;
 var _auraName = "Bravery: +1 Att";
 if(_flag==RETURN_NAME){
 	return _auraName;
 }
-else{
-	if(!applied_auras_stat){
-		applied_auras_stat=ds_list_create()
+else if(_flag==RUN_ENCHANTMENT){
+	if(!applied_enchantments_stat){
+		applied_enchantments_stat=ds_list_create()
 	}
 		var _has_elite = false;
 		var _owner = owner;
@@ -26,6 +26,15 @@ else{
 			}
 			att_effective+=1;
 			//All auras must attach the reversal script to the object they modify, IF they modify it
-			ds_list_add(applied_auras_stat, rau_braveScout);
+			ds_list_add(applied_enchantments_stat, au_braveScout);
 		}
+}else if(_flag==REVERSE_ENCHANTMENT){
+	//reverse auras simply reverse the effect of their counterpart. 
+	//They are removed from the model by the scripts which run the model loops.
+	//Reverse auras do NOT check conditions, they ALWAYS remove
+	//If the source is still around, IT is what has the responsibility of reapplying if the aura is still valid
+		att_effective-=1;
+		if(LOG_AURA){
+				ex_log("["+_auraName+" <- "+name+"]");
+			}
 }

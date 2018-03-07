@@ -40,11 +40,11 @@ battlecry = noone;
 deathrattle = noone;
 
 //list of scripts for auras originating from this model
-auras_stat = noone;
-auras_other = noone;
+enchantments_stat = noone;
+enchantments_other = noone;
 //list of scripts attached by auras (for identification and reversal)
-applied_auras_stat = noone;
-applied_auras_other = noone;
+applied_enchantments_stat = noone;
+applied_enchantments_other = noone;
 
 attack_trigger = noone;
 after_attack_trigger = noone;

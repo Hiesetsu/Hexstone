@@ -1,8 +1,8 @@
 {
-    "id": "7b132d8a-141c-420e-ba3b-a477779f6830",
+    "id": "37f36228-e72d-4c31-9dde-cbffab852c3d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "rau_standardBearer",
+    "name": "en_captain",
     "IsCompatibility": false,
     "IsDnD": false
 }

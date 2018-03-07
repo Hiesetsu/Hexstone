@@ -1,6 +1,7 @@
 /// @description 
 #macro DEBUG true
 #macro LOG_AURA true
+#macro LOG_ENCHANTMENT false
 #macro CONTROL ob_controller
 
 persistent = true;
@@ -90,8 +91,9 @@ alarm[0] = 1;
 #macro AMBUSH 3
 
 //Aura function rules
-#macro RUN_AURA 0
+#macro RUN_ENCHANTMENT 0
 #macro RETURN_NAME 1
+#macro REVERSE_ENCHANTMENT 2
 
 //Floating Messages
 #macro TAUNT_MESSAGE "A Model with Taunt is in the way"

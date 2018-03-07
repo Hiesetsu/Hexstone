@@ -8,27 +8,24 @@
 with(ob_model)
 {
 	aliveBeforeAura = !(mortally_wounded||pending_destroyed||dead);
-	if(applied_auras_stat&&!dead){
+	if(applied_enchantments_stat&&!dead){
 		var _i = 0;
-		for(_i=0;_i<ds_list_size(applied_auras_stat);_i++){
-			//Executing an applied aura with RUN_AURA reverses the aura's effect, executing with RETURN_NAME makes it return a name or description
-			script_execute(applied_auras_stat[|_i], RUN_AURA);
-				if(LOG_AURA){
-				ex_log("["+script_execute(applied_auras_stat[|_i], RETURN_NAME)+" <- "+name+"]");
-			}
+		for(_i=0;_i<ds_list_size(applied_enchantments_stat);_i++){
+			//Executing an applied aura with REVERSE_ENCHANTMENT reverses the aura's effect, executing with RETURN_NAME makes it return a name or description
+			script_execute(applied_enchantments_stat[|_i], REVERSE_ENCHANTMENT);
 		}
-		ds_list_destroy(applied_auras_stat);
-		applied_auras_stat=noone;
+		ds_list_destroy(applied_enchantments_stat);
+		applied_enchantments_stat=noone;
 	}
 }
 //Reapply auras 
 with(ob_model)
 {
-	if(auras_stat&&!dead){
+	if(enchantments_stat&&!dead){
 		var _i = 0;
-		for(_i=0;_i<ds_list_size(auras_stat);_i++){
-			//Executing an aura with RUN_AURA reverses the aura's effect, executing with RETURN_NAME makes it return a name or description
-			script_execute(auras_stat[|_i], RUN_AURA);
+		for(_i=0;_i<ds_list_size(enchantments_stat);_i++){
+			//Executing an aura with RUN_ENCHANTMENT reverses the aura's effect, executing with RETURN_NAME makes it return a name or description
+			script_execute(enchantments_stat[|_i], RUN_ENCHANTMENT);
 		}
 	}
 	//Uncomment to make moving away from a health giving aura kill you

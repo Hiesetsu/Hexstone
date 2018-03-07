@@ -19,8 +19,8 @@ tribe = MARINE;
 combat_range = MELEE;
 deepstrike=true;
 battlecry = bc_standardBearer;
-auras_stat = ds_list_create();
-ds_list_add(auras_stat, au_standardBearer);
+enchantments_stat = ds_list_create();
+ds_list_add(enchantments_stat, au_standardBearer);
 
 card_text = "Deepstrike.\n Adjacent Marines and Scouts have +1/+1";
 

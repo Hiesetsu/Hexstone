@@ -16,8 +16,8 @@ tribe = SCOUT;
 combat_range = RANGED;
 flanking = true;
 
-auras_stat = ds_list_create();
-ds_list_add(auras_stat, au_braveScout);
+enchantments_stat = ds_list_create();
+ds_list_add(enchantments_stat, au_braveScout);
 
 att_effective = att_base;
 hp_effective = hp_base;

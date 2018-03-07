@@ -14,5 +14,5 @@ with(ob_model){
 		_count++;
 	}
 }
-ex_log("---Hit: "+string(_count)+" Mortally Wounded: "+string(_dead)+"---");
+ex_log("     ---Hit: "+string(_count)+" Mortally Wounded: "+string(_dead)+"---");
 ex_log("^--Drone Deathrattle (1 to all models)--^");
