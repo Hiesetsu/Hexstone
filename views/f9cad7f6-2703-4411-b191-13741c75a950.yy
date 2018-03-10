@@ -6,7 +6,8 @@
     "children": [
         "f3edcc92-933a-4387-b64d-b129c2aca89e",
         "6474db2f-cb2f-4a53-a199-608ad9f1d72e",
-        "881ed35c-e78a-4ea4-933d-7213f45e270d"
+        "881ed35c-e78a-4ea4-933d-7213f45e270d",
+        "59230846-9d95-4882-9c13-65b403f3b088"
     ],
     "filterType": "GMScript",
     "folderName": "Battlecries",

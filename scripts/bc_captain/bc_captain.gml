@@ -9,14 +9,15 @@ var _model = argument1;
 var _owner = argument2;
 
 ex_log("--Captain Battlecry (+1/+1 to friendly Scouts and Marines)");
-ex_floating_message_ext(_node.x, _node.y, "RALLY!!", 0.05);
+ex_floating_message_ext(_node.x, _node.y, "RALLY!!", SECOND);
 var _targets = ds_list_create();
 with(ob_model)
 {
 	if(owner = _owner && (tribe = MARINE || tribe == SCOUT)){
-		att_effective +=1;
-		hp_current+=1;
-		hp_effective+=1;
+		if(!enchantments_stat){
+			enchantments_stat=ds_list_create()
+		}
+			ds_list_add(enchantments_stat, en_captain);
 	}
 }
 ex_play_model_from_box(_node, _model, _owner);

@@ -48,6 +48,8 @@ if(_defender.after_defense_trigger && !_defender.mortally_wounded && !_defender.
 //End of attack sequence, should update auras and remove the dead (just removing dead atm)
 ex_process_deaths();
 
+au_applyStatAuras();
+au_applyOtherAuras();
 
 
 

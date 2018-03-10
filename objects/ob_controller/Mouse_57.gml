@@ -7,8 +7,10 @@ if(hovered_tile != noone)
 		if(model && !model.mortally_wounded && !model.pending_destroyed)
 		{
 			ex_hide_card(model);
-			if(model.owner != ob_controller.current_turn && target)
-			{
+			
+			if(model.owner != ob_controller.current_turn && CONTROL.state = TARGET_ATTACK){
+			#region quick attack
+			
 				if(CONTROL.taunt_in_range)
 				{
 					if(!model.taunt)
@@ -24,6 +26,7 @@ if(hovered_tile != noone)
 				{
 					ex_model_attack(CONTROL.attacker, model);
 				}		
+				#endregion
 			}			
 		}
 		else

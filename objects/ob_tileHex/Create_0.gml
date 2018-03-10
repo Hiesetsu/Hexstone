@@ -21,9 +21,19 @@ root_play = noone;
 ex = 0;
 wy = 0;
 
+//Special Shading cases
+auraTarget = false;
+col_aura = c_white;
+secondaryTarget = false;
+
 //Colors
 col_moveTarget = $FFD37F
 col_attackVacant = $9B97FE;
 col_attackTarget = $362CC4;
 col_summonTarget = $5ccf7b;
-col_battlecryTarget = $2276f7
+col_battlecryTarget = $2276f7;
+col_cardTarget = $863b7f;
+
+pulse = -1;
+pulse_period = 2*SECOND;
+alarm[0] = pulse_period;

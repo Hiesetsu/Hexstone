@@ -43,6 +43,14 @@ with(ob_model)
 		exhausted = true;
 	}
 }
+with(ob_manabar)
+{
+	if(!(CONTROL.turn_number == 0&&CONTROL.current_turn = PLAYER1)){
+		if(owner != CONTROL.current_turn){
+			ex_log("---Mana floated: "+string(mana_current)+"");
+		}
+	}
+}
 if(CONTROL.current_turn = PLAYER1)
 {
 	CONTROL.turn_number++;
@@ -79,8 +87,8 @@ with(ob_manabar)
 	}
 	else
 	{
+
 		if(!(CONTROL.current_turn = PLAYER1)){
-			ex_log("---Mana floated: "+string(mana_current)+"");
 			ex_log("   <--------------Bottom of turn "+string(CONTROL.turn_number)+"-------------->");
 		}
 	}

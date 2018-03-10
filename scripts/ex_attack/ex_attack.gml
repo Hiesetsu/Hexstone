@@ -7,5 +7,10 @@ var _damageDone = ex_deal_damage(_def, _att.att_effective);
 if(_damageDone>0){
 	if(_att.lethal&&!_def.comm_center){
 		_def.pending_destroyed = true;
+		ex_log("-"+_def.name+"'s fate is sealed");
+	}
+	if(_att.stealthed){
+		_att.stealthed = false;
+		ex_log("-"+_att.name+" lost stealth.");
 	}
 }

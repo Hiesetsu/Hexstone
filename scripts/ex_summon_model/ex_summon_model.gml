@@ -41,6 +41,8 @@ if(_node.model == noone)
 		CONTROL.player1_model_count++;
 	else
 		CONTROL.player2_model_count++;
+	au_applyStatAuras();
+	au_applyOtherAuras();
 	return _model;
 }
 return noone;

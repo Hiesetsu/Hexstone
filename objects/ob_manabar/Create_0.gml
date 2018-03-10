@@ -10,9 +10,9 @@ mana_per_turn_cap = 6;
 mana_cap_cap = 12;
 
 display_base = sprite_width/2-16
-display_mana_margin = 5;
+display_mana_margin = 3;
 
-full_crystal = $F2B213;
-empty_crystal = $6D2F0D;
+full_crystal = $FFFFFF;
+empty_crystal = $6D6D6D;
 
 owner = PLAYER1;
