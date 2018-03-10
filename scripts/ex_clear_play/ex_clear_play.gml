@@ -5,7 +5,7 @@ with(ob_tileHex)
 	target = false;
 	//Cost to move to (essentially distance)
 	g_val_play = 0;
-	image_blend = startColor;
+	//image_blend = startColor;
 }
 CONTROL.model_to_summon = noone;
 CONTROL.node_to_summon = noone;

@@ -9,4 +9,8 @@ if(_damageDone>0){
 		_def.pending_destroyed = true;
 		ex_log("-"+_def.name+"'s fate is sealed");
 	}
+	if(_att.stealthed){
+		_att.stealthed = false;
+		ex_log("-"+_att.name+" lost stealth.");
+	}
 }

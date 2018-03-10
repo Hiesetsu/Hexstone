@@ -10,7 +10,7 @@ with(ob_tileHex)
 	//node of attacking model
 	source_node = false;
 
-	image_blend = startColor;
+	//image_blend = startColor;
 }	
 ds_list_empty(CONTROL.attackable_tiles);
 CONTROL.defender = noone;

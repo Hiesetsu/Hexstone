@@ -108,8 +108,8 @@ alarm[0] = 1;
 
 //Timing
 #macro SECOND room_speed
-#macro HALF_SECOND = room_speed/2
-#macro QUARTER_SECOND = room_speed/4
+#macro HALF_SECOND  room_speed/2
+#macro QUARTER_SECOND room_speed/4
 
 ex_macro_to_string_maps();
 

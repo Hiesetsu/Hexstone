@@ -18,9 +18,25 @@ if(target)
 	else if(CONTROL.state == TARGET_BATTLECRY){
 		image_blend = merge_color(image_blend, col_battlecryTarget, 0.05);
 	}
-}else if(hovered){
+	else if(CONTROL.state == TARGET_CARD){
+		image_blend = merge_color(image_blend, col_battlecryTarget, 0.05);
+	}
+}
+else if(auraTarget){
+	if(pulse<0){
+		image_blend = merge_color(image_blend, col_aura, 0.05);
+	}
+	else{
+		image_blend = merge_color(image_blend, startColor, 0.05);
+	}
+	
+}
+else if(hovered){
 		if(model != noone)
 			model.image_blend = merge_color(model.image_blend, model.highlight_color, 0.05);
+}
+else{
+	image_blend = merge_color(image_blend, startColor, 0.5);
 }
 
 

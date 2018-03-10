@@ -11,6 +11,9 @@ if(CONTROL.state == DEFAULT_STATE){
 }
 draw_self();
 draw_sprite(art, 0, x, y);
+if(stealthed){
+	draw_sprite_ext(sp_shroud, 0, x, y, 1, 1, 0, c_white, 0.9);
+}
 var attack_color = att_effective>att_base ? c_lime : c_white;
 var hp_color = hp_current>hp_base ? c_lime : c_white;
 hp_color = hp_current<hp_effective ? c_red : hp_color;

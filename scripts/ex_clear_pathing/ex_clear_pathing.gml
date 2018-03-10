@@ -10,7 +10,7 @@ with(ob_tileHex)
 	//Node which the moving model is on
 	source_node = false;
 	
-	image_blend = startColor;
+	//image_blend = startColor;
 }
 CONTROL.mover = noone;
 //list of all tiles which can be moved to

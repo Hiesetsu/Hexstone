@@ -12,12 +12,13 @@ card_text = "Lethal. Flanking.";
 
 att_base = 1;
 hp_base = 2;
-points_base = 2;
+points_base = 3;
 
 type = TROOP;
 tribe = SCOUT;
 
 lethal = true;
+stealthed = true;
 flanking = true;
 
 combat_range = MELEE;

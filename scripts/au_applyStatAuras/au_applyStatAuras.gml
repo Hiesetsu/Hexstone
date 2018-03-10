@@ -5,6 +5,10 @@
 //As such, removal is handled by the recipient, and application is handled by the source. Currently, only models can recieve or be the source of auras.
 
 //Remove all auras from everything
+with(ob_tileHex){
+	auraTarget = false;
+	col_aura = c_white;
+}
 with(ob_model)
 {
 	aliveBeforeAura = !(mortally_wounded||pending_destroyed||dead);

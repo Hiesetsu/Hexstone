@@ -8,14 +8,16 @@ if(_flag==RETURN_NAME){
 	return _auraName;
 }
 else if(_flag==RUN_ENCHANTMENT){
+
 	var _neighbors=tile.neighbors;
 	if(_neighbors){
 		var _i;
 		for(_i=0; _i<ds_list_size(_neighbors); _i++){
-			var _model=_neighbors[|_i].model;
-			if(_model&&_neighbors[|_i]!=tile){
+			var _node = _neighbors[|_i];
+			var _model=_node.model;
+			if(_model&&_node!=tile){
 				if(_model.owner = owner&&(_model.tribe == SCOUT || _model.tribe == MARINE)){
-					
+					_node.auraTarget = true;
 					//This aura grants +1/+1 to adjacent models
 					if(LOG_AURA){
 						ex_log("["+_auraName+" -> "+_model.name+"]");
@@ -33,6 +35,8 @@ else if(_flag==RUN_ENCHANTMENT){
 					ds_list_add(_model.applied_enchantments_stat, au_standardBearer);
 				}
 			}
+			tile.auraTarget = true;
+			tile.col_aura = c_aqua;
 		}
 	}
 }
@@ -44,7 +48,6 @@ else if(_flag==REVERSE_ENCHANTMENT){
 		att_effective-=1;
 		hp_effective-=1;
 		hp_current-=1;
-	 
 		if(hp_current==-1){
 			hp_current = 0;
 		}

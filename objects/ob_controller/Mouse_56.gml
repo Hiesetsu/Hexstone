@@ -1,41 +1,11 @@
 /// @description 
 if(hovered_tile != noone)
 {
-	if(CONTROL.state = TARGET_ATTACK)
-	{
+	switch(CONTROL.state){
+		case TARGET_MOVE:
 		with(hovered_tile)
 		{
-			if(model && !model.mortally_wounded && !model.pending_destroyed)
-			{
-				ex_hide_card(model);
-				if(model.owner != ob_controller.current_turn && target)
-				{
-					if(CONTROL.taunt_in_range)
-					{
-						if(!model.taunt)
-						{
-							ex_floating_message(mouse_x, mouse_y, TAUNT_MESSAGE);
-						}
-						else
-						{
-							ex_model_attack(CONTROL.attacker, model);
-						}
-					}
-					else
-					{
-						ex_model_attack(CONTROL.attacker, model);
-					}		
-				}
-			}
-			else if(!target)
-				ex_clear_nodes()
-		}
-	}
-	else if(CONTROL.state == TARGET_MOVE)
-	{
-		with(hovered_tile)
-		{
-		if(target){
+			if(target){
 			var _node = self;
 			while(_node.root != noone)
 			{
@@ -51,35 +21,86 @@ if(hovered_tile != noone)
 				ex_floating_message(mouse_x, mouse_y, IN_THE_WAY_MESSAGE);
 			}
 		}
+		break;
+		case TARGET_ATTACK:
+			with(hovered_tile)
+			{
+				if(model && !model.mortally_wounded && !model.pending_destroyed)
+				{
+					ex_hide_card(model);
+					if(model.owner != ob_controller.current_turn && target)
+					{
+						if(CONTROL.taunt_in_range)
+						{
+							if(!model.taunt)
+							{
+								ex_floating_message(mouse_x, mouse_y, TAUNT_MESSAGE);
+							}
+							else
+							{
+								ex_model_attack(CONTROL.attacker, model);
+							}
+						}
+						else
+						{
+							ex_model_attack(CONTROL.attacker, model);
+						}		
+					}
+				}
+			else if(!target)
+				ex_clear_nodes()
+		}
+		break;
+		case PLAY_MODEL: 
+			with(hovered_tile)
+			{
+				if(target)
+				{
+					ex_play_model(id, CONTROL.model_to_summon, CONTROL.current_turn, CONTROL.battlecry);
+					if(!CONTROL.battlecry)
+					{
+						ex_clear_nodes();
+					}
+				}
+			}
+		break;
+		case TARGET_BATTLECRY:
+			with(hovered_tile)
+			{
+				if(target){
+					if(CONTROL.battlecry_log != "")
+						ex_log(CONTROL.battlecry_log);
+					script_execute(CONTROL.battlecry, id, CONTROL.battlecry_val);
+					ex_play_model_from_box(CONTROL.node_to_summon, CONTROL.model_to_summon, CONTROL.current_turn);
+					ex_clear_nodes();
+					//PROCESS DEATH that may have been caused by the battlecry
+					ex_process_deaths();
+				}
+			}
+		break;
+		case TARGET_CARD:
+		
+		break;
+		case TARGET_ABILITY:
+		
+		break;
+		
+	}
+	if(CONTROL.state = TARGET_ATTACK)
+	{
+		
+	}
+	else if(CONTROL.state == TARGET_MOVE)
+	{
+		
 	}
 	else if (CONTROL.state == PLAY_MODEL)
 	{
-		with(hovered_tile)
-		{
-			if(target)
-			{
-				ex_play_model(id, CONTROL.model_to_summon, CONTROL.current_turn, CONTROL.battlecry);
-				if(!CONTROL.battlecry)
-				{
-					ex_clear_nodes();
-				}
-			}
-		}
+		
 	}
 	else if(CONTROL.state = TARGET_BATTLECRY)
 	{
-		with(hovered_tile)
-		{
-			if(target){
-				if(CONTROL.battlecry_log != "")
-					ex_log(CONTROL.battlecry_log);
-				script_execute(CONTROL.battlecry, id, CONTROL.battlecry_val);
-				ex_play_model_from_box(CONTROL.node_to_summon, CONTROL.model_to_summon, CONTROL.current_turn);
-				ex_clear_nodes();
-				//PROCESS DEATH that may have been caused by the battlecry
-				ex_process_deaths();
-			}
-		}
+		
 	}
 	else
 	{

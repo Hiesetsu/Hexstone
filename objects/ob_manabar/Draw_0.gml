@@ -18,7 +18,7 @@ for(i = 0; i <mana_cap; i++)
 		blend = empty_crystal;
 	}
 	//if(owner == PLAYER2)
-		draw_sprite_ext(sp_mana_crystal, 0, x-display_base+sprite_get_height(sp_mana_crystal)*i+display_mana_margin*i, y, 1, 1, 0, blend, 1);
+		draw_sprite_ext(sp_mana_crystal, 0, x-display_base+sprite_get_width(sp_mana_crystal)*i+display_mana_margin*i, y, 1, 1, 0, blend, 1);
 	//else
 		//draw_sprite_ext(sp_mana_crystal, 0, x+display_base-sprite_get_height(sp_mana_crystal)*i-display_mana_margin*i, y, 1, 1, 0, blend, 1);
 	
