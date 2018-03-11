@@ -8,7 +8,7 @@ name = "Assassin";
 art = sp_assassin;
 full_art = sp_assassinFullart;
 rarity = sp_common_rarity;
-card_text = "Lethal. Flanking.";
+card_text = "Flanking. Stealthed. Lethal.";
 
 att_base = 1;
 hp_base = 2;

@@ -35,6 +35,7 @@ owner = noone;
 controller = noone;
 type = noone;
 tribe = noone;
+faction = FACTIONS.federation;
 
 battlecry = noone;
 deathrattle = noone;

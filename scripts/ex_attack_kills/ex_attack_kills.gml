@@ -4,7 +4,7 @@
 var _a = argument0;
 var _d = argument1;
 
-if(_d.shielded = true)
+if(_d.shielded||_d.stealthed)
 {
 	return false;
 }

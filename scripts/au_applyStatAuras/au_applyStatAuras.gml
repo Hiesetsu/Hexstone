@@ -41,3 +41,23 @@ with(ob_model)
 			}
 		}
 }
+//After auras are run, cards should set their playability
+with(ob_card){
+	playable = false;
+	script_execute(play_rule, id);
+}
+
+with(ob_ability){
+	if(owner = CONTROL.current_turn)
+	{
+		if(cost_effective<=ex_get_current_mana(owner) && !exhausted){
+			useable = true;
+		}
+		else{
+			useable = false;
+		}
+		if(!exhausted){
+			image_index = 0;
+		}
+	}
+}

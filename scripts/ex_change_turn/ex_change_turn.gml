@@ -93,3 +93,14 @@ with(ob_manabar)
 		}
 	}
 }
+with(ob_ability){
+	if(owner = CONTROL.current_turn){
+		exhausted = false;
+	}
+	else{
+		useable = false;
+	}
+}
+au_applyStatAuras();
+au_applyOtherAuras();
+		

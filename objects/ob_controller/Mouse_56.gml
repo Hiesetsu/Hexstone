@@ -1,5 +1,5 @@
 /// @description 
-if(hovered_tile != noone)
+if(hovered_tile != noone && CONTROL.state != CONTROL_LOCKED)
 {
 	switch(CONTROL.state){
 		case TARGET_MOVE:
@@ -41,8 +41,10 @@ if(hovered_tile != noone)
 								ex_model_attack(CONTROL.attacker, model);
 							}
 						}
-						else
-						{
+						else if(model.stealthed){
+							ex_floating_message(mouse_x, mouse_y, STEALTH_MESSAGE);
+						}
+						else{
 							ex_model_attack(CONTROL.attacker, model);
 						}		
 					}
@@ -68,42 +70,54 @@ if(hovered_tile != noone)
 			with(hovered_tile)
 			{
 				if(target){
-					if(CONTROL.battlecry_log != "")
-						ex_log(CONTROL.battlecry_log);
-					script_execute(CONTROL.battlecry, id, CONTROL.battlecry_val);
-					ex_play_model_from_box(CONTROL.node_to_summon, CONTROL.model_to_summon, CONTROL.current_turn);
-					ex_clear_nodes();
-					//PROCESS DEATH that may have been caused by the battlecry
-					ex_process_deaths();
+					if(model &&model.stealthed){
+							ex_floating_message(mouse_x, mouse_y, STEALTH_MESSAGE);
+					}
+					else{
+						if(CONTROL.battlecry_log != ""){
+							ex_log(CONTROL.battlecry_log);
+						}
+						//Script, the targeted node, the value (all set by the battlecry on the model as its played)
+						script_execute(CONTROL.battlecry, id, CONTROL.battlecry_val);
+						ex_play_model_from_box(CONTROL.node_to_summon, CONTROL.model_to_summon, CONTROL.current_turn);
+						ex_clear_nodes();
+						//PROCESS DEATH that may have been caused by the battlecry
+						ex_process_deaths();
+					}
 				}
 			}
 		break;
 		case TARGET_CARD:
-		
+			with(hovered_tile)
+			{
+				if(target){
+					if(model &&model.stealthed){
+							ex_floating_message(x, y, STEALTH_MESSAGE);
+					}
+					else{
+						if(CONTROL.card_to_play.log != ""){
+							ex_log(CONTROL.card_to_play.log);
+						}
+						//Script, the targeted node, the value of the effect, reference to card
+						var _card = CONTROL.card_to_play;
+						ex_pay_mana(_card.owner, _card.cost_effective);
+						script_execute(_card.effect, id, _card.effect_value, _card);
+						ex_clear_nodes();
+						//PROCESS DEATH that may have been caused by the card's effect
+						ex_process_deaths();
+					}
+				}
+			}
 		break;
 		case TARGET_ABILITY:
 		
 		break;
 		
-	}
-	if(CONTROL.state = TARGET_ATTACK)
-	{
+		default: 
 		
+		break;
 	}
-	else if(CONTROL.state == TARGET_MOVE)
-	{
+}
+else{
 		
-	}
-	else if (CONTROL.state == PLAY_MODEL)
-	{
-		
-	}
-	else if(CONTROL.state = TARGET_BATTLECRY)
-	{
-		
-	}
-	else
-	{
-		
-	}
 }

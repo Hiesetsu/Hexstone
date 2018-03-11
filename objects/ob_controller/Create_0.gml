@@ -29,6 +29,7 @@ log = "Game Start\n";
 #macro TARGET_ABILITY 5
 #macro TARGET_CARD 6
 #macro CHOOSE_CARD 7
+#macro CONTROL_LOCKED 8
 
 state = DEFAULT_STATE;
 
@@ -46,6 +47,8 @@ battlecry_target = noone;
 battlecry_val = 0;
 battlecry_hint = "";
 battlecry_log = "";
+
+card_to_play = noone;
 //************************//
 effect_being_targeted = noone;
 targeter = noone;
@@ -95,8 +98,18 @@ alarm[0] = 1;
 #macro RETURN_NAME 1
 #macro REVERSE_ENCHANTMENT 2
 
+//Factions
+enum FACTIONS{
+	federation,
+	noire,
+	skelemancers,
+	demons,
+	bugs
+}
+
 //Floating Messages
 #macro TAUNT_MESSAGE "A Model with Taunt is in the way"
+#macro STEALTH_MESSAGE "You cannot directly target models with stealth"
 #macro IN_THE_WAY_MESSAGE "A Model is in the way"
 #macro SUMMONING_SICK_MESSAGE "Models can't act the turn they're summoned"
 #macro IMMOBILE_MESSAGE "That model is immobile."

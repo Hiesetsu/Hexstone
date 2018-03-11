@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(hovered_tile != noone)
+if(hovered_tile != noone&&CONTROL.state != CONTROL_LOCKED)
 {
 	with(hovered_tile)
 	{
@@ -11,27 +11,25 @@ if(hovered_tile != noone)
 			if(model.owner != ob_controller.current_turn && CONTROL.state = TARGET_ATTACK){
 			#region quick attack
 			
-				if(CONTROL.taunt_in_range)
-				{
-					if(!model.taunt)
-					{
+				if(CONTROL.taunt_in_range){
+					if(!model.taunt){
 						ex_floating_message(mouse_x, mouse_y, TAUNT_MESSAGE);
 					}
-					else
-					{
+					else{
 						ex_model_attack(CONTROL.attacker, model);
 					}
 				}
-				else
-				{
+				else if(model.stealthed){
+							ex_floating_message(mouse_x, mouse_y, STEALTH_MESSAGE);
+						}
+				else{
 					ex_model_attack(CONTROL.attacker, model);
 				}		
 				#endregion
 			}			
 		}
-		else
-		{
-			ex_clear_nodes()
+		else{
+			ex_clear_nodes();
 		}
 	}
 }

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(hovered_tile != noone)
+if(hovered_tile != noone && CONTROL.state != CONTROL_LOCKED)
 {
 	with(hovered_tile)
 	{

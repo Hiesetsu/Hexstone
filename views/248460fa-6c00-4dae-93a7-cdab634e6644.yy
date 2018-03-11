@@ -12,7 +12,9 @@
         "bdef84e2-261a-484a-a705-1f43c155c121",
         "2a122a88-068c-4041-9847-94a04dc657bb",
         "b8522754-77f7-43b0-9980-8e56e18d5718",
-        "35091379-6a5d-4757-aaec-8a4002676838"
+        "35091379-6a5d-4757-aaec-8a4002676838",
+        "ebe99ac1-d3b1-4f45-970e-2a35d51395c7",
+        "7ea9894f-3fa4-49a0-b21a-1db22ec1cb68"
     ],
     "filterType": "GMSprite",
     "folderName": "Card Symbols",

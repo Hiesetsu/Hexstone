@@ -5,6 +5,7 @@
     "name": "15d05658-5d0a-4a8c-af0b-821f74d83a1e",
     "children": [
         "ad0bbfd4-d50d-441f-a22e-ff5981796357",
+        "dc8c5dd8-7cc8-4169-8126-67c95bb1c0f8",
         "b4c99d5d-88f4-414c-a7cb-c5d8eed47bfa"
     ],
     "filterType": "GMRoom",
