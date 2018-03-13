@@ -15,13 +15,20 @@ var _i = 0;
 var _size = ds_list_size(cards);
 for(_i = 0; _i<_size; _i++){
 	var _card = cards[|_i];
-	var _offset = _i-(_size-1)/2;
+	var _offset = -(_i-(_size-1)/2);
 	if(_card != hovered_card && _card != selected_card){
 		_card.x = x-_offset*card_spacing;//lerp(_card.x, x-_offset, 0.1);
-		_card.y = lerp(_card.y, card_y+abs(_offset*4), 0.1);
 		_card.image_xscale = lerp(_card.image_xscale, hand_scale, 0.5);
 		_card.image_yscale = lerp(_card.image_yscale, hand_scale, 0.5);
-		_card.image_angle = _offset*3;
-		_card.depth = card_depth+_i;
+		if(owner == PLAYER1 || room != rm_gameBoardNetworking){
+			_card.y = lerp(_card.y, card_y+abs(_offset*4), 0.1);
+			_card.image_angle = _offset*3;
+			_card.depth = card_depth-_i;
+		}
+		else{
+			_card.y = lerp(_card.y, card_y-abs(_offset*4), 0.1);
+			_card.image_angle = 360-_offset*3;
+			_card.depth = card_depth+_i;
+		}
 	}
 }

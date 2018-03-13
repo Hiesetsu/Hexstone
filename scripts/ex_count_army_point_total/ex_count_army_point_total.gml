@@ -32,9 +32,12 @@ for(_i = 0; _i<4; _i++)
 {
 	_num += _list[# AL_5UPCOST+_i, AL_NUMBER];
 	var _m = _list[# AL_5UPCOST+_i, AL_MODEL];
-	_m = instance_create_depth(x, y, 0, _m);
-	_total+=_num*_m.points_effective;
-	_num = 0;
-	instance_destroy(_m);
+	var _p = object_get_parent(_m);
+	if(_p == ob_model){
+		_m = instance_create_depth(x, y, 0, _m);
+		_total+=_num*_m.points_effective;
+		_num = 0;
+		instance_destroy(_m);
+	}
 }
 return _total;

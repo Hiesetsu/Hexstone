@@ -35,6 +35,7 @@ if(_battlecry)
 else{
 	//here, pay the cost of the model, increment the number of models for the player,
 	//summon the model to the board (summoning increments model count)
+	//NETWORK: Send message here
 	ex_play_model_from_box(_node, _model, _owner);
 }
 

@@ -1,4 +1,9 @@
-///@ex_draw_text_centered(x, y, text, color, font)
+///@description ex_draw_text_centered(x, y, text, color, font)
+///@arg x
+///@arg y
+///@arg text
+///@arg color
+///@arg font
 var _x = argument0;
 var _y = argument1;
 var _text = argument2;

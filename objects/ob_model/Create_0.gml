@@ -38,6 +38,7 @@ tribe = noone;
 faction = FACTIONS.federation;
 
 battlecry = noone;
+battlecry_targeted = false;
 deathrattle = noone;
 
 //list of scripts for auras originating from this model

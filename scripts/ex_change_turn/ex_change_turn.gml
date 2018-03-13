@@ -1,3 +1,6 @@
+with(ob_turnButton){
+	timer = 0;
+}
 //End of Turn
 with(ob_model)
 {
@@ -24,8 +27,12 @@ with(ob_model)
 if(ob_controller.current_turn = PLAYER1)
 {
 	ob_controller.current_turn = PLAYER2;
+	if(room == rm_gameBoardNetworking){
+		CONTROL.locked = true;
+	}
 }else{
 	ob_controller.current_turn = PLAYER1;
+	CONTROL.state = DEFAULT_STATE;
 }
 
 //Start of Turn

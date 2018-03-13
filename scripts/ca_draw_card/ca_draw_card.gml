@@ -1,5 +1,11 @@
-///@description ca_draw_card(hand)
-var _hand = argument0;
+///@description ca_draw_card(player)
+var _player = argument0;
+var _hand = noone;
+with(ob_hand){
+	if(owner == _player){
+		_hand = id;
+	}
+}
 if(_hand.deck){
 	var _card = ca_top_card_of_deck(_hand.deck);
 	if(_card != noone){

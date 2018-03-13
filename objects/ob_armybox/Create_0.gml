@@ -71,7 +71,8 @@ ex_add_model_to_box(ob_captain, id, 1);
 //army_list[# (AL_5UPCOST+1), AL_MODEL] = ob_terminator;
 //army_list[# (AL_5UPCOST+1), AL_NUMBER] = 2;
 
-points_remaining = ex_count_army_point_total(army_list);
+points_remaining = 0;
+alarm[0] = 1;
 ////////////////////////////////////////////////////////////////////////////////////////
 costY = top+20+sprite_get_height(sp_cost_button)/2;
 cost_1X = left+button_width;

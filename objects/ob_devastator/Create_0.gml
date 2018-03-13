@@ -18,6 +18,7 @@ tribe = MARINE;
 
 combat_range = MELEE;
 battlecry = bc_devastator;
+battlecry_targeted = true;
 
 card_text = "Battlecry: deal 1 damage";
 

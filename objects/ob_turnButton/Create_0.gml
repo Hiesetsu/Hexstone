@@ -4,7 +4,8 @@ image_blend = PLAYER1_COLOR;
 image_speed = 0;
 color = PLAYER1_COLOR;
 highlight = PLAYER1_HIGHLIGHT;
-
+timer = 0;
+turn_time = SECOND*120;
 path_player2 = path_add();
 //path_add_point(path_player2, x, ob_playfieldHex.y+TILE_HEIGHT*6, 20);
 path_add_point(path_player2, x, ob_playfieldHex.y+TILE_HEIGHT*4, 20);

@@ -4,8 +4,10 @@ if(card)
 	card.visible = false;
 	alarm[0] = -1;
 }
-
-if(playable && CONTROL.current_turn==owner)
+if(CONTROL.locked){
+	
+}
+else if(playable && CONTROL.current_turn==owner)
 {
 	ex_target_play_with_rule(summon_rule, model_to_summon, battlecry, slot);
 }

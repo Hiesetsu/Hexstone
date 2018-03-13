@@ -1,5 +1,5 @@
 /// @description
-if(useable){
+if(useable&&!CONTROL.locked){
 	var _owner = owner;
 	var _hand = noone;
 	with(ob_hand){
@@ -8,7 +8,7 @@ if(useable){
 		}
 	}
 	if(_hand){
-		script_execute(ability_effect, _hand);
+		script_execute(ability_effect, owner);
 			image_index = 1;
 			counter++;
 			exhausted = true;

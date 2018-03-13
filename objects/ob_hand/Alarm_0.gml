@@ -9,9 +9,13 @@ with(ob_deck){
 }
 deck = _deck;
 ca_add_to_hand(ob_fireStrike, id);
-ca_add_to_hand(ob_ShieldAndHammer, id);
 ca_add_to_hand(ob_fireStrike, id);
+ca_add_to_hand(ob_ShieldAndHammer, id);
 if(owner = PLAYER2){
-	ca_add_to_hand(ob_fireStrike, id);
+	if(CONTROL.on_play){
+		ca_add_to_hand(ob_fireStrike, id);
+	}
 	raised_y = y+70;
+}else if(owner = PLAYER1 && !CONTROL.on_play){
+	ca_add_to_hand(ob_fireStrike, id);
 }

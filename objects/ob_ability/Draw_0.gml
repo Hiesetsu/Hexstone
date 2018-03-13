@@ -1,5 +1,5 @@
 /// @description
-if(useable){
+if(useable&&(owner == PLAYER1 || room != rm_gameBoardNetworking)){
 	draw_sprite_ext(sp_abilityHalo, 0, x, y, 1.05, 1.05, 0, c_green, 1);
 }
 draw_self();
